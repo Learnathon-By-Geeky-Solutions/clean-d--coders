@@ -1,8 +1,8 @@
-# clean-d--coders
+# Clean D. Coders
 
 ## Team Members
 - SaiemAziz (Team Leader)
-- Sahim98
+- Sahim32
 - ReazTowsif
 
 ## Mentor
