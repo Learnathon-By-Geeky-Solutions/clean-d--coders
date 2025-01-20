@@ -1,13 +1,13 @@
 import App from "@/App";
 import { AuthorizedCheck } from "@/components";
-import { About, Dashboard, Error, Home, Profile, SignIn, SignUp, Statistics } from "@/pages";
+import { About, Dashboard, ErrorPage, Home, Profile, SignIn, SignUp, Statistics } from "@/pages";
 import { createBrowserRouter, Navigate } from "react-router";
 
 export const routes = createBrowserRouter([
     {
         path: "/",
         element: <App />,
-        errorElement: <Error />,
+        errorElement: <ErrorPage />,
         children: [
             {
                 path:"/",
