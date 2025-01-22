@@ -74,7 +74,6 @@ export function DashboardSidebar() {
           </SidebarGroupContent>
           <SidebarGroupLabel>Mentee</SidebarGroupLabel>
           {mentee ? (
-            <>
               <SidebarGroupContent>
                 <SidebarMenu>
                   {menteeItems.map((item) => (
@@ -89,7 +88,6 @@ export function DashboardSidebar() {
                   ))}
                 </SidebarMenu>
               </SidebarGroupContent>
-            </>
           ) : (
             <SidebarGroupContent>
               <SidebarMenu>
@@ -108,7 +106,7 @@ export function DashboardSidebar() {
           )}
           <SidebarGroupLabel>Mentor</SidebarGroupLabel>
           {mentor ? (
-            <>
+    
               <SidebarGroupContent>
                 <SidebarMenu>
                   {mentorItems.map((item) => (
@@ -123,7 +121,7 @@ export function DashboardSidebar() {
                   ))}
                 </SidebarMenu>
               </SidebarGroupContent>
-            </>
+    
           ) : (
             <SidebarGroupContent>
               <SidebarMenu>

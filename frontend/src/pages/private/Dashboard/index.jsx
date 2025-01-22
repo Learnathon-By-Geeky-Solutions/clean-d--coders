@@ -7,7 +7,6 @@ import { Outlet } from "react-router";
 
 const Dashboard = () => {
   return (
-    <>
       <SidebarProvider>
         <DashboardSidebar />
         <>
@@ -15,7 +14,6 @@ const Dashboard = () => {
           <Outlet />
         </>
       </SidebarProvider>
-    </>
   );
 };
 
