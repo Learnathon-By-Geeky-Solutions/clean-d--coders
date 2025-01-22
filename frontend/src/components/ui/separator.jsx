@@ -22,4 +22,12 @@ const Separator = React.forwardRef((
 ))
 Separator.displayName = SeparatorPrimitive.Root.displayName
 
+import PropTypes from 'prop-types';
+
+Separator.propTypes = {
+  className: PropTypes.string,
+  orientation: PropTypes.oneOf(['horizontal', 'vertical']),
+  decorative: PropTypes.bool,
+};
+
 export { Separator }

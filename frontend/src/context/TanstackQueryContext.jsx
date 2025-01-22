@@ -1,5 +1,7 @@
 /* eslint-disable react/prop-types */
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import PropTypes from 'prop-types';
+
 const queryClient = new QueryClient()
 
 const TanstackQueryContext = ({children}) => {
@@ -8,6 +10,10 @@ const TanstackQueryContext = ({children}) => {
             {children}
         </QueryClientProvider>
     );
+}
+TanstackQueryContext.propTypes = {
+    children: PropTypes.node.isRequired,
 };
+
 
 export default TanstackQueryContext;

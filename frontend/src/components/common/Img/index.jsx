@@ -1,5 +1,6 @@
-/* eslint-disable react/prop-types */
+
 import { useEffect, useState } from "react";
+import PropTypes from 'prop-types';
 const Img = ({src, lowSrc = "", className}) => {
     const [imageSrc, setImageSrc] = useState(lowSrc || src);
     useEffect(()=> {
@@ -12,6 +13,7 @@ const Img = ({src, lowSrc = "", className}) => {
     }, [src, lowSrc]);
     return (
         <img
+            alt=""
             src={imageSrc}
             className={className}
             style={{
@@ -19,5 +21,11 @@ const Img = ({src, lowSrc = "", className}) => {
             }}
         />
     );
+}
+Img.propTypes = {
+    src: PropTypes.string.isRequired,
+    lowSrc: PropTypes.string,
+    className: PropTypes.string,
 };
+
 export default Img;
