@@ -1,11 +1,22 @@
+import {
+  DashboardSidebar,
+  SidebarProvider,
+  SidebarTrigger,
+} from "@/components";
 import { Outlet } from "react-router";
 
 const Dashboard = () => {
-    return (
+  return (
+    <>
+      <SidebarProvider>
+        <DashboardSidebar />
         <>
-          <Outlet /> 
+          <SidebarTrigger />
+          <Outlet />
         </>
-    );
+      </SidebarProvider>
+    </>
+  );
 };
 
 export default Dashboard;
