@@ -3,7 +3,7 @@ import { Outlet, useLocation } from "react-router";
 
 const App = () => {
   const {pathname} = useLocation()
-  if(pathname.includes('dashboard'))
+  if(pathname.startsWith('/dashboard'))
     return (
       <Outlet />
     ); 

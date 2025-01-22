@@ -19,6 +19,7 @@ import {
   MessageCircleQuestion,
   Star,
   ArrowBigUpDash,
+  UserRound,
 } from "lucide-react";
 import { Button } from "@/components/ui";
 import { useState } from "react";
@@ -143,7 +144,13 @@ export function DashboardSidebar() {
       </SidebarContent>
       <SidebarFooter>
         <Button variant="ghost">
-          <Link to="/dashboard/profile"></Link>
+          <Link
+            to="/dashboard/profile"
+            className="w-full flex items-center justify-between"
+          >
+            <span>Profile</span>
+            <UserRound />
+          </Link>
         </Button>
         <Button variant="default">
           <Link
