@@ -1,9 +1,12 @@
 import { Footer, Navbar } from "@/components";
-import { Outlet } from "react-router";
+import { Outlet, useLocation } from "react-router";
 
 const App = () => {
-
-
+  const {pathname} = useLocation()
+  if(pathname.includes('dashboard'))
+    return (
+      <Outlet />
+    ); 
   return (
     <>
       <Navbar />
