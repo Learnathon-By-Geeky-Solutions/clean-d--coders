@@ -54,6 +54,8 @@ export function DashboardSidebar() {
 
   return (
     <Sidebar>
+      <div className="bg-gray-200 flex flex-col items-center justify-between h-full">
+      <div className="w-full">
       <SidebarHeader>
         <Link to="/">Mentor Connect</Link>
       </SidebarHeader>
@@ -140,17 +142,21 @@ export function DashboardSidebar() {
           )}
         </SidebarGroup>
       </SidebarContent>
-      <SidebarFooter>
-        <Button variant="ghost">
+      </div>
+      <SidebarFooter className="w-full">
+        <Button variant="ghost" className="pl-2">
           <Link
             to="/dashboard/profile"
             className="w-full flex items-center justify-between"
           >
-            <span>Profile</span>
+            <div className="w-10 p-0.5 aspect-square rounded-full border-4 border-blue-400">
+              <div className="w-full h-full bg-black rounded-full"></div>
+            </div>
+            <span>Md Abu Saiem</span>
             <UserRound />
           </Link>
         </Button>
-        <Button variant="default">
+        <Button variant="destructive">
           <Link
             to="/sign-up"
             className="w-full flex items-center justify-between"
@@ -160,6 +166,7 @@ export function DashboardSidebar() {
           </Link>
         </Button>
       </SidebarFooter>
+      </div>
     </Sidebar>
   );
 }
