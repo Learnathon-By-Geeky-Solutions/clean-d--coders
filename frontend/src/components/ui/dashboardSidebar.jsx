@@ -32,24 +32,24 @@ export function DashboardSidebar() {
   const menteeItems = [
     {
       title: "Statistics",
-      url: "/dashboard/statistics",
+      url: "/dashboard/mentee/statistics",
       icon: ChartColumn,
     },
     {
       title: "Certificates",
-      url: "/dashboard/certificates",
+      url: "/dashboard/mentee/certificates",
       icon: BookmarkCheck,
     },
   ];
   const mentorItems = [
     {
       title: "Feedbacks",
-      url: "/dashboard/feedbacks",
+      url: "/dashboard/mentor/feedbacks",
       icon: MessageCircleQuestion,
     },
     {
       title: "Reviews",
-      url: "/dashboard/certificates",
+      url: "/dashboard/mentor/reviews",
       icon: Star,
     },
   ];
@@ -74,7 +74,7 @@ export function DashboardSidebar() {
             <SidebarMenu>
               <SidebarMenuItem>
                 <SidebarMenuButton asChild>
-                  <Link to="/dashboard/sessions">
+                  <Link to="/dashboard/common/sessions">
                     <Presentation />
                     <span>Sessions</span>
                   </Link>
@@ -154,7 +154,7 @@ export function DashboardSidebar() {
       <SidebarFooter className="w-full">
         <Button variant="ghost" className="pl-2">
           <Link
-            to="/dashboard/profile"
+            to="/dashboard/common/profile"
             className="w-full flex items-center justify-between"
           >
             <div className="w-10 p-0.5 aspect-square rounded-full border-4 border-blue-400">

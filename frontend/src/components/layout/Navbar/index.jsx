@@ -29,7 +29,6 @@ const Navbar = () => {
       icon: UserRound,
     },
   ];
-  console.log(pathname);
   return (
     <header className="flex h-20 w-full shrink-0 items-center px-4 md:px-6 bg-primary">
       <Sheet>
@@ -39,7 +38,7 @@ const Navbar = () => {
             className="h-full"
             prefetch={false}
           >
-            <Img src={NavLogo} alt="Navbar Logo" className=" bg-transparent"/>
+            <Img src={NavLogo} alt="Navbar Logo" className="h-10 bg-transparent"/>
           </Link>
 
         <SheetTrigger className="lg:hidden">
