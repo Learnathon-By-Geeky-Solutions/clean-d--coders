@@ -1,4 +1,5 @@
-import { Button } from "@/components";
+import { ErrorCable, NotFound } from "@/assets";
+import { Button, Img } from "@/components";
 import { useNavigate } from "react-router";
 
 const ErrorPage = () => {
@@ -18,25 +19,26 @@ const ErrorPage = () => {
                 Looks like you&apos;ve found the doorway to the great nothing
               </h1>
               <p className="my-2 text-gray-800">
-                Sorry about that! Please visit our hompage to get where you need
-                to go.
-              </p>
-              <Button
+                Sorry about that! Please visit our <span><Button
                 variant="destructive"
                 onClick={handleClick}
-                className="w-full "
+                className="mx-1"
+                size="sm"
               >
-               Go Home
-              </Button>
+               Home
+              </Button></span> to get where you need
+                to go.
+              </p>
+              
             </div>
           </div>
           <div>
-            <img alt="" src="https://i.ibb.co/G9DC8S0/404-2.png" />
+            <Img alt="" src={NotFound} />
           </div>
         </div>
       </div>
       <div>
-        <img className="animate-pulse" alt="" src="https://i.ibb.co/ck1SGFJ/Group.png" />
+        <Img className="animate-pulse" alt="" src={ErrorCable} />
       </div>
     </div>
   );

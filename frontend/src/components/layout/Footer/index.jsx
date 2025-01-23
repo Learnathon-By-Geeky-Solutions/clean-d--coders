@@ -1,8 +1,10 @@
+import { FooterLogo } from "@/assets";
+import { Img } from "@/components/common";
 
 const Footer = () => {
     return (
         <div className="bg-primary text-white py-10 text-center flex flex-col items-center gap-5">
-            <p className="text-4xl font-bold text-orange-200">MENTOR CONNECT</p>
+            <Img src={FooterLogo} alt="Footer Logo" className="h-20"/>
             <p>{(new Date()).getFullYear()}, All rights reserved.</p>
         </div>
     );
