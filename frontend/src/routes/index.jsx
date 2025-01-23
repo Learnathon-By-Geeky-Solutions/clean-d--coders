@@ -2,68 +2,69 @@ import App from "@/App";
 import { AuthorizedCheck } from "@/components";
 import { About, Certificates, Dashboard, ErrorPage, Feedbacks, Home, MentorDetails, Mentors, Profile, Sessions, SignIn, SignUp, Statistics } from "@/pages";
 import Reviews from "@/pages/private/mentor/Reviews";
+import { pathAbout, pathCertificates, pathDashboard, pathFeedbacks, pathHome, pathMentorDetails, pathMentors, pathProfile, pathReviews, pathSessions, pathSignIn, pathSignUp, pathStatistics } from "@/utils";
 import { createBrowserRouter, Navigate } from "react-router";
 
 export const routes = createBrowserRouter([
     {
-        path: "/",
+        path: pathHome,
         element: <App />,
         errorElement: <ErrorPage />,
         children: [
             {
-                path:"/",
+                index: true,
                 element: <Home/>
             },
             {
-                path:"/sign-in",
+                path:pathSignIn,
                 element: <SignIn/>
             },
             {
-                path:"/sign-up",
+                path:pathSignUp,
                 element: <SignUp/>
             },
             {
-                path:"/about",
+                path:pathAbout,
                 element: <About/>
             },
             {
-                path:"/mentors",
+                path:pathMentors,
                 element: <Mentors/>
             },
             {
-                path:"/mentor/:id",
+                path:pathMentorDetails + "/:id",
                 element: <MentorDetails/>
             },
             {
-                path:"/dashboard",
+                path:pathDashboard,
                 element: <Dashboard/>,
                 children: [
                     {
                         index: true,
-                        element: <Navigate to="/dashboard/common/profile" replace/>
+                        element: <Navigate to={pathProfile} replace/>
                     },
                     {
-                        path: "/dashboard/common/profile",
+                        path: pathProfile,
                         element: <AuthorizedCheck common><Profile/></AuthorizedCheck>
                     },
                     {
-                        path: "/dashboard/common/sessions",
+                        path: pathSessions,
                         element: <AuthorizedCheck common><Sessions/></AuthorizedCheck>
                     },
                     {
-                        path: "/dashboard/mentee/statistics",
+                        path: pathStatistics,
                         element: <AuthorizedCheck role="mentee"><Statistics/></AuthorizedCheck>
                     },
                     {
-                        path: "/dashboard/mentee/certificates",
+                        path: pathCertificates,
                         element: <AuthorizedCheck role="mentee"><Certificates/></AuthorizedCheck>
                     },
                     {
-                        path: "/dashboard/mentor/reviews",
+                        path: pathReviews,
                         element: <AuthorizedCheck role="mentor"><Reviews/></AuthorizedCheck>
                     },
                     {
-                        path: "/dashboard/mentor/feedbacks",
+                        path: pathFeedbacks,
                         element: <AuthorizedCheck role="mentor"><Feedbacks/></AuthorizedCheck>
                     }
                 ]

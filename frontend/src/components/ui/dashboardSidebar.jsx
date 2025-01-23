@@ -25,6 +25,7 @@ import { Button } from "@/components/ui";
 import { useState } from "react";
 import { Img } from "@/components/common";
 import { NavLogo } from "@/assets";
+import { pathCertificates, pathFeedbacks, pathHome, pathProfile, pathReviews, pathSessions, pathSignIn, pathStatistics } from "@/utils";
 export function DashboardSidebar() {
   const [mentor, setMentor] = useState(false);
   const [mentee, setMentee] = useState(false);
@@ -32,24 +33,24 @@ export function DashboardSidebar() {
   const menteeItems = [
     {
       title: "Statistics",
-      url: "/dashboard/mentee/statistics",
+      url: pathStatistics,
       icon: ChartColumn,
     },
     {
       title: "Certificates",
-      url: "/dashboard/mentee/certificates",
+      url: pathCertificates,
       icon: BookmarkCheck,
     },
   ];
   const mentorItems = [
     {
       title: "Feedbacks",
-      url: "/dashboard/mentor/feedbacks",
+      url: pathFeedbacks,
       icon: MessageCircleQuestion,
     },
     {
       title: "Reviews",
-      url: "/dashboard/mentor/reviews",
+      url: pathReviews,
       icon: Star,
     },
   ];
@@ -59,7 +60,7 @@ export function DashboardSidebar() {
       <div className="bg-gray-200 flex flex-col items-center justify-between h-full">
       <div className="w-full">
       <SidebarHeader>
-        <Link to="/" className="p-2 pb-0">
+        <Link to={pathHome} className="p-2 pb-0">
           <Img 
             alt="Navbar Logo"
             src={NavLogo}
@@ -74,7 +75,7 @@ export function DashboardSidebar() {
             <SidebarMenu>
               <SidebarMenuItem>
                 <SidebarMenuButton asChild>
-                  <Link to="/dashboard/common/sessions">
+                  <Link to={pathSessions}>
                     <Presentation />
                     <span>Sessions</span>
                   </Link>
@@ -154,7 +155,7 @@ export function DashboardSidebar() {
       <SidebarFooter className="w-full">
         <Button variant="ghost" className="pl-2">
           <Link
-            to="/dashboard/common/profile"
+            to={pathProfile}
             className="w-full flex items-center justify-between"
           >
             <div className="w-10 p-0.5 aspect-square rounded-full border-4 border-blue-400">
@@ -166,7 +167,7 @@ export function DashboardSidebar() {
         </Button>
         <Button variant="destructive">
           <Link
-            to="/sign-up"
+            to={pathSignIn}
             className="w-full flex items-center justify-between"
           >
             <span>Logout</span>

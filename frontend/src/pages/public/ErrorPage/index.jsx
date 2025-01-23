@@ -1,12 +1,15 @@
 import { ErrorCable, NotFound } from "@/assets";
 import { Button, Img } from "@/components";
+import { useTitle } from "@/hooks";
+import { pathHome } from "@/utils";
 import { useNavigate } from "react-router";
 
 const ErrorPage = () => {
+  useTitle("404 Not Found");
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate("/");
+    navigate(pathHome);
   };
   return (
     <div className="lg:px-24 lg:py-24 md:py-20 md:px-44 px-4 py-24 items-center flex justify-center flex-col-reverse lg:flex-row md:gap-28 gap-16 h-screen">
@@ -33,12 +36,12 @@ const ErrorPage = () => {
             </div>
           </div>
           <div>
-            <Img alt="" src={NotFound} />
+            <Img alt="404 Not Found image" src={NotFound} />
           </div>
         </div>
       </div>
       <div>
-        <Img className="animate-pulse" alt="" src={ErrorCable} />
+        <Img className="animate-pulse" alt="Cable disconnected image" src={ErrorCable} />
       </div>
     </div>
   );

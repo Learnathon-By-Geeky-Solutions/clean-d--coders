@@ -1,4 +1,7 @@
+import { useTitle } from "@/hooks";
+
 const Home = () => {
+    useTitle("Home");
     return (
         <div>
             Home

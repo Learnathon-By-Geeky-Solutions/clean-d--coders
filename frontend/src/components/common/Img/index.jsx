@@ -1,7 +1,7 @@
 
 import { useEffect, useState } from "react";
 import PropTypes from 'prop-types';
-const Img = ({src, lowSrc = "", className, alt = ""}) => {
+const Img = ({src, lowSrc = "", className, alt}) => {
     const [imageSrc, setImageSrc] = useState(lowSrc || src);
     useEffect(()=> {
         if(!lowSrc) return;
@@ -26,7 +26,7 @@ Img.propTypes = {
     src: PropTypes.string.isRequired,
     lowSrc: PropTypes.string,
     className: PropTypes.string,
-    alt: PropTypes.string,
+    alt: PropTypes.string.isRequired,
 };
 
 export default Img;

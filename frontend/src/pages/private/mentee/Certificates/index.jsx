@@ -1,5 +1,7 @@
+import { useTitle } from "@/hooks";
 
 const Certificates = () => {
+    useTitle("Certificates");
     return (
         <div>
             Certificates
