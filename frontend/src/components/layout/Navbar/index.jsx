@@ -1,31 +1,27 @@
-/**
- * v0 by Vercel.
- * @see https://v0.dev/t/lJwnQlHSEBA
- * Documentation: https://v0.dev/docs#integrating-generated-code-into-your-nextjs-app
- */
 import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "react-router";
 import { HomeIcon, LayoutDashboard, LocateIcon, Menu, UserRound } from "lucide-react";
 import { Img } from "@/components/common";
 import { NavLogo } from "@/assets";
+import { pathAbout, pathDashboard, pathHome, pathMentors } from "@/utils";
 
 const Navbar = () => {
   const { pathname } = useLocation();
   const menuItems = [
     {
       name: "Home",
-      href: "/",
+      href: pathHome,
       icon: HomeIcon,
     },
     {
       name: "About",
-      href: "/about",
+      href: pathAbout,
       icon: LocateIcon,
     },
     {
       name: "Mentors",
-      href: "/mentors",
+      href: pathMentors,
       icon: UserRound,
     },
   ];
@@ -34,7 +30,7 @@ const Navbar = () => {
       <Sheet>
       <div className="flex items-center justify-between w-full">
           <Link
-            to="/"
+            to={pathHome}
             className="h-full"
             prefetch={false}
           >
@@ -65,7 +61,7 @@ const Navbar = () => {
           </div>
           <Button variant="default" className="w-full">
             <Link
-              to="/dashboard"
+              to={pathDashboard}
               className="flex w-full items-center py-2 text-lg font-semibold justify-between"
               prefetch={false}
             >
@@ -88,7 +84,7 @@ const Navbar = () => {
         </Link>))
         }
         <Link
-          to="/dashboard"
+          to={pathDashboard}
           className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-white px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-100 hover:text-gray-900 focus:bg-gray-100 focus:text-gray-900 focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-gray-100/50 data-[state=open]:bg-gray-100/50 dark:bg-gray-950 dark:hover:bg-gray-800 dark:hover:text-gray-50 dark:focus:bg-gray-800 dark:focus:text-gray-50 dark:data-[active]:bg-gray-800/50 dark:data-[state=open]:bg-gray-800/50"
           prefetch={false}
         >

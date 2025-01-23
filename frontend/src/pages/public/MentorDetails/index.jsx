@@ -1,6 +1,8 @@
+import { useTitle } from "@/hooks";
 import { useParams } from "react-router";
 
 const MentorDetails = () => {
+    useTitle("Mentor Details");
     const {id} = useParams();
     return (
         <div>

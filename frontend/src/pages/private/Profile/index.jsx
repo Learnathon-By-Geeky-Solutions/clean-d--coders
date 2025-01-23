@@ -1,5 +1,7 @@
+import { useTitle } from "@/hooks";
 
 const Profile = () => {
+    useTitle("Profile");
     return (
         <div>
            Profile 

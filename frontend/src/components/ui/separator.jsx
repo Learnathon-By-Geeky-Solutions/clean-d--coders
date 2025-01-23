@@ -26,7 +26,7 @@ import PropTypes from 'prop-types';
 
 Separator.propTypes = {
   className: PropTypes.string,
-  orientation: PropTypes.oneOf(['horizontal', 'vertical']),
+  orientation: PropTypes.string,
   decorative: PropTypes.bool,
 };
 

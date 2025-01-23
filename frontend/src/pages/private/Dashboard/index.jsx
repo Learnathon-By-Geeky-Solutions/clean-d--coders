@@ -3,9 +3,11 @@ import {
   SidebarProvider,
   SidebarTrigger,
 } from "@/components";
+import { useTitle } from "@/hooks";
 import { Outlet } from "react-router";
 
 const Dashboard = () => {
+  useTitle("Dashboard");
   return (
       <SidebarProvider>
         <DashboardSidebar />
