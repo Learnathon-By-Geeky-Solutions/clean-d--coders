@@ -23,6 +23,8 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui";
 import { useState } from "react";
+import { Img } from "@/components/common";
+import { NavLogo } from "@/assets";
 export function DashboardSidebar() {
   const [mentor, setMentor] = useState(false);
   const [mentee, setMentee] = useState(false);
@@ -57,7 +59,13 @@ export function DashboardSidebar() {
       <div className="bg-gray-200 flex flex-col items-center justify-between h-full">
       <div className="w-full">
       <SidebarHeader>
-        <Link to="/">Mentor Connect</Link>
+        <Link to="/" className="p-2 pb-0">
+          <Img 
+            alt="Navbar Logo"
+            src={NavLogo}
+            className="h-8"
+          />
+        </Link>
       </SidebarHeader>
       <SidebarContent>
         <SidebarGroup>
