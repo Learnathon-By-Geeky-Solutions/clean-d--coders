@@ -10,9 +10,9 @@ const AuthorizedCheck = memo(({ children, role, common = false }) => {
     const { user, isLoading } = useUserStore();
     if (isLoading) return <FullScreenLoading />;
     else if (!user?.role) return <Navigate to="/sign-in" />;
-    else if (common || role === user?.role) return children;
+    else if (common || user?.role?.includes(role)) return children;
   
-    return <Navigate to="/dashboard/profile" />;
+    return <Navigate to="/dashboard/common/profile" />;
   });
 AuthorizedCheck.propTypes = {
   children: PropTypes.node,
