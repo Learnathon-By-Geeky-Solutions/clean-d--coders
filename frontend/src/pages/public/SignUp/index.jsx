@@ -1,10 +1,12 @@
+import { LeftSignUp, RightSignUp } from "@/components";
 import { useTitle } from "@/hooks";
 
 const SignUp = () => {
     useTitle("Sign Up");
     return (
         <div>
-            SignUp
+            <LeftSignUp/>
+            <RightSignUp/>
         </div>
     );
 };
