@@ -15,11 +15,10 @@ const App = () => {
     ); 
   return (
     <div className="flex flex-col min-h-screen w-full">
-      <div className="flex flex-col flex-1 w-full">
       <Navbar />
-      <Outlet />
+      <div className="flex flex-col flex-1 w-full">
+        <Outlet/>
       </div>
-
       <Footer />
     </div>
   );
