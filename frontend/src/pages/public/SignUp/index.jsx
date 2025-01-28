@@ -4,7 +4,7 @@ import { useTitle } from "@/hooks";
 const SignUp = () => {
     useTitle("Sign Up");
     return (
-        <div>
+        <div className="flex">
             <LeftSignUp/>
             <RightSignUp/>
         </div>
