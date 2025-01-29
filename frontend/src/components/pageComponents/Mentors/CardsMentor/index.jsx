@@ -1,18 +1,21 @@
+import BannerSection from "@/components/pageComponents/Mentors/CardsMentor/BannerSection";
+import CardsSection from "@/components/pageComponents/Mentors/CardsMentor/CardsSection";
+import PropTypes from "prop-types";
+import { useState } from "react";
 
-import { Button } from '@/components/ui';
-import PropTypes from 'prop-types';
+const CardsMentor = ({ setOpen }) => {
+  const [sort, setSort] = useState("default");
 
-const CardsMentor = ({setOpen}) => {
-    return (
-        <div className="w-full h-full absolute">
-            <Button onClick={() => setOpen(true)}>Open Filter</Button>
-            Cards
-        </div>
-    );
+  return (
+    <div className="w-full h-full">
+      <BannerSection setOpen={setOpen} setSort={setSort} sort={sort}/>
+      <CardsSection />
+    </div>
+  );
 };
 
 CardsMentor.propTypes = {
-    setOpen: PropTypes.func
+  setOpen: PropTypes.func,
 };
 
 export default CardsMentor;
