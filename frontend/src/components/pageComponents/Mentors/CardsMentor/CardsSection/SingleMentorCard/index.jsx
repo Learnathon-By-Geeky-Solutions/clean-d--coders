@@ -1,29 +1,41 @@
 import { Img } from "@/components/common";
+import { getCapitalCase, getDBValToCamelCase, pathMentorDetails } from "@/utils";
+import { Link } from "react-router";
+import PropTypes from 'prop-types';
 
-const SingleMentorCard = () => {
+const SingleMentorCard = ({data}) => {
     return (
-        <div className="rounded-xl shadow-lg p-5">
+        <Link to={`${pathMentorDetails}/1`} className="rounded-xl shadow-lg p-5 md:hover:scale-95 duration-150 ease-in-out">
             <div className="flex justify-between">
                 <div className="flex flex-col justify-between">
-                    <p className="text-2xl">Hanna Lorens</p>
-                    <p className="text-green-400 font-medium">50$</p>
+                    <p className="text-2xl">{data.name}</p>
+                    <p className="text-green-400 font-medium">{data.cost}$</p>
                 </div>
                 <Img 
                     alt="user avatar"
-                    src="https://img.freepik.com/premium-vector/avatar-profile-icon-flat-style-female-user-profile-vector-illustration-isolated-background-women-profile-sign-business-concept_157943-38866.jpg?semt=ais_hybrid"
+                    src={data.image}
                     className="rounded-full h-20 aspect-square"
                 />
             </div>
             <div className="my-5 flex justify-between items-start gap-5">
                 <p className="opacity-60">Tags:</p>
-                <p className="w-2/3">React, Next, Express, Cloud, Dotnet, OOP, Front-end</p>
+                <p className="w-2/3">{data.tags.map(t => getCapitalCase(t)).join(", ")}</p>
             </div>
             <div className="flex justify-between items-start gap-5">
                 <p className="opacity-60">Company:</p>
-                <p className="w-2/3">Brain Station 23</p>
+                <p className="w-2/3">{getDBValToCamelCase(data.company)}</p>
             </div>
-        </div>
+        </Link>
     );
+};
+SingleMentorCard.propTypes = {
+    data: PropTypes.shape({
+        name: PropTypes.string.isRequired,
+        cost: PropTypes.number.isRequired,
+        image: PropTypes.string.isRequired,
+        tags: PropTypes.arrayOf(PropTypes.string).isRequired,
+        company: PropTypes.string.isRequired,
+    }).isRequired,
 };
 
 export default SingleMentorCard;

@@ -4,40 +4,10 @@ import PropTypes from "prop-types";
 import { Accordion } from "@/components/ui/accordion";
 import CommonAccordion from "@/components/pageComponents/Mentors/FilterMentors/CommonAccordion";
 import { useState } from "react";
+import { useMentorStore } from "@/store";
 
-export const companies = [
-  { label: "All", value: "all" },
-  { label: "Enosis", value: "enosis" },
-  { label: "Brain Station 23", value: "brain_station_23" },
-  {
-    label: "Selise",
-    value: "selise",
-  },
-];
-export const costs = [
-  { label: "All", value: "all" },
-  { label: "Paid", value: "paid" },
-  { label: "Unpaid", value: "unpaid" },
-];
-export const tags = [
-  { label: "All", value: "all" },
-  { label: "React", value: "react" },
-  { label: "Dotnet", value: "dotnet" },
-  {
-    label: "Cloud",
-    value: "Cloud",
-  },
-];
-export const universities = [
-  { label: "All", value: "all" },
-  { label: "University of Chittagong", value: "university_of_chittagong" },
-  { label: "University of Dhaka", value: "university_of_dhaka" },
-  {
-    label: "IIUC",
-    value: "iiuc",
-  },
-];
 const FilterMentors = ({ open, setOpen }) => {
+  const {filterData, setFilteredMentor, setUnFillteredMentor} = useMentorStore()
   const [uniList, setUniList] = useState(["all"]);
   const [uniVal, setUniVal] = useState("");
   const [companyList, setCompanyList] = useState(["all"]);
@@ -46,6 +16,21 @@ const FilterMentors = ({ open, setOpen }) => {
   const [tagVal, setTagVal] = useState("");
   const [costList, setCostList] = useState(["all"]);
   const [costVal, setCostVal] = useState("");
+  const handleFilterApply = () => {
+    setFilteredMentor({
+      companies: companyList,
+      universities: uniList,
+      tags: tagList,
+      costs: costList
+    })
+  }
+  const handleFilterReset = () => {
+    setUnFillteredMentor()
+    setUniList(["all"])
+    setCompanyList(["all"])
+    setTagList(["all"])
+    setCostList(["all"])
+  }
   return (
     <div
       className={`h-full absolute z-10 top-0 left-0 flex ${
@@ -73,7 +58,7 @@ const FilterMentors = ({ open, setOpen }) => {
           >
             <CommonAccordion
               title="Universities"
-              originalList={universities}
+              originalList={filterData.universities}
               list={uniList}
               setList={setUniList}
               val={uniVal}
@@ -81,7 +66,7 @@ const FilterMentors = ({ open, setOpen }) => {
             />
             <CommonAccordion
               title="Companies"
-              originalList={companies}
+              originalList={filterData.companies}
               list={companyList}
               setList={setCompanyList}
               val={companyVal}
@@ -89,7 +74,7 @@ const FilterMentors = ({ open, setOpen }) => {
             />
             <CommonAccordion
               title="Tags"
-              originalList={tags}
+              originalList={filterData.tags}
               list={tagList}
               setList={setTagList}
               val={tagVal}
@@ -97,13 +82,17 @@ const FilterMentors = ({ open, setOpen }) => {
             />
             <CommonAccordion
               title="Cost"
-              originalList={costs}
+              originalList={filterData.costs}
               list={costList}
               setList={setCostList}
               val={costVal}
               setVal={setCostVal}
             />
           </Accordion>
+          <div className="w-full px-5 flex gap-5 items-center">
+          <Button className="flex-1" onClick={handleFilterApply}>Apply</Button>
+          <Button variant="destructive" className="flex-1" onClick={handleFilterReset}>Reset</Button>
+          </div>
         </div>
       </div>
       {open && (
