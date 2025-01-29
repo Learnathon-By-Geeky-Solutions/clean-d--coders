@@ -53,52 +53,58 @@ const FilterMentors = ({ open, setOpen }) => {
       } overflow-hidden`}
     >
       <div
-        className={`h-full overflow-y-auto bg-white transition-all duration-300 ease-in-out ${
+        className={`h-full overflow-y-auto  transition-all duration-300 ease-in-out bg-gray-200 ${
           open ? "w-80" : "w-0"
         }`}
       >
         {/* Menu Side Bar */}
-        <div className="w-full p-5 border-b-2 flex justify-between items-center">
-          <p className="text-2xl font-medium">Filter</p>
-          <Button variant="ghost" onClick={() => setOpen(!open)}>
-            <X />
-          </Button>
-        </div>
+        <div className="sticky top-0 h-fit">
+          <div className="w-full p-5 border-b-2 flex justify-between items-center">
+            <p className="text-2xl font-medium">Filter</p>
+            <Button variant="ghost" onClick={() => setOpen(!open)}>
+              <X />
+            </Button>
+          </div>
 
-        <Accordion type="multiple" collapsible="true" className="p-5 space-y-5">
-          <CommonAccordion
-            title="Universities"
-            originalList={universities}
-            list={uniList}
-            setList={setUniList}
-            val={uniVal}
-            setVal={setUniVal}
-          />
-          <CommonAccordion
-            title="Companies"
-            originalList={companies}
-            list={companyList}
-            setList={setCompanyList}
-            val={companyVal}
-            setVal={setCompanyVal}
-          />
-          <CommonAccordion
-            title="Tags"
-            originalList={tags}
-            list={tagList}
-            setList={setTagList}
-            val={tagVal}
-            setVal={setTagVal}
-          />
-          <CommonAccordion
-            title="Cost"
-            originalList={costs}
-            list={costList}
-            setList={setCostList}
-            val={costVal}
-            setVal={setCostVal}
-          />
-        </Accordion>
+          <Accordion
+            type="multiple"
+            collapsible="true"
+            className="p-5 space-y-5"
+          >
+            <CommonAccordion
+              title="Universities"
+              originalList={universities}
+              list={uniList}
+              setList={setUniList}
+              val={uniVal}
+              setVal={setUniVal}
+            />
+            <CommonAccordion
+              title="Companies"
+              originalList={companies}
+              list={companyList}
+              setList={setCompanyList}
+              val={companyVal}
+              setVal={setCompanyVal}
+            />
+            <CommonAccordion
+              title="Tags"
+              originalList={tags}
+              list={tagList}
+              setList={setTagList}
+              val={tagVal}
+              setVal={setTagVal}
+            />
+            <CommonAccordion
+              title="Cost"
+              originalList={costs}
+              list={costList}
+              setList={setCostList}
+              val={costVal}
+              setVal={setCostVal}
+            />
+          </Accordion>
+        </div>
       </div>
       {open && (
         <button

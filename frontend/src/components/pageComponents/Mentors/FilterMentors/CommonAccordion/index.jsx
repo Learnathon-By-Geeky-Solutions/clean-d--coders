@@ -19,7 +19,7 @@ const CommonAccordion = ({list, setList, val, setVal, originalList, title}) => {
         if(item === "all") setList(["all"])
         else if (!list.includes(item)) {
             const selected = list.filter(x => x !== "all");
-            setList([...selected, item])
+            setList(selected.length === originalList.length-2 ?["all"]:[...selected, item])
         }
         setVal("");
       };
