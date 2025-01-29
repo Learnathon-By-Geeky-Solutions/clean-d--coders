@@ -1,0 +1,1 @@
+export const apiAllMentors = "https://dummyjson.com/c/f37c-2345-42ca-83ce"

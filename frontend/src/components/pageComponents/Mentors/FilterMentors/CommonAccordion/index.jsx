@@ -10,7 +10,7 @@ import {
     SelectTrigger,
     SelectValue,
   } from "@/components/ui/select";
-  import { getCapitalCase } from "@/utils";
+  import { getDBValToCamelCase } from "@/utils";
 import { Button } from "@/components/ui";
 import { X } from "lucide-react";
 import PropTypes from "prop-types"
@@ -37,9 +37,9 @@ const CommonAccordion = ({list, setList, val, setVal, originalList, title}) => {
           <SelectValue placeholder={`Select ${title}`} />
         </SelectTrigger>
         <SelectContent>
-          {originalList.map((x) => !list.includes(x.value) && (
-            <SelectItem key={x.value} value={x.value}>
-              {x.label}
+          {originalList.map((x) => !list.includes(x) && (
+            <SelectItem key={x} value={x}>
+              {getDBValToCamelCase(x)}
             </SelectItem>
           ))}
         </SelectContent>
@@ -48,7 +48,7 @@ const CommonAccordion = ({list, setList, val, setVal, originalList, title}) => {
         <div className="pt-3 gap-1 flex flex-wrap">
           {list.map((x) => (
             <Button variant={x !== "all" ? "default" : "success"} size="sm" onClick={() =>x !== "all" && handleRemove(x)} key={x}>
-              <span className="text-xs">{getCapitalCase(x.split("_").join(" "))}</span>
+              <span className="text-xs">{getDBValToCamelCase(x)}</span>
               {
                 x !== "all" && <X />
               }
