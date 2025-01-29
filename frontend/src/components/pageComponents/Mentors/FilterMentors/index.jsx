@@ -1,16 +1,51 @@
 import { Button } from "@/components/ui";
 import { X } from "lucide-react";
 import PropTypes from "prop-types";
-import {
-  Accordion
-} from "@/components/ui/accordion";
-import UniversitiesAccordion from "@/components/pageComponents/Mentors/FilterMentors/UniversityAccordion";
-import CompaniesAccordion from "@/components/pageComponents/Mentors/FilterMentors/Companies";
-import TagsAccordion from "@/components/pageComponents/Mentors/FilterMentors/Tags";
-import CostAccordion from "@/components/pageComponents/Mentors/FilterMentors/Cost";
+import { Accordion } from "@/components/ui/accordion";
+import CommonAccordion from "@/components/pageComponents/Mentors/FilterMentors/CommonAccordion";
+import { useState } from "react";
 
+export const companies = [
+  { label: "All", value: "all" },
+  { label: "Enosis", value: "enosis" },
+  { label: "Brain Station 23", value: "brain_station_23" },
+  {
+    label: "Selise",
+    value: "selise",
+  },
+];
+export const costs = [
+  { label: "All", value: "all" },
+  { label: "Paid", value: "paid" },
+  { label: "Unpaid", value: "unpaid" },
+];
+export const tags = [
+  { label: "All", value: "all" },
+  { label: "React", value: "react" },
+  { label: "Dotnet", value: "dotnet" },
+  {
+    label: "Cloud",
+    value: "Cloud",
+  },
+];
+export const universities = [
+  { label: "All", value: "all" },
+  { label: "University of Chittagong", value: "university_of_chittagong" },
+  { label: "University of Dhaka", value: "university_of_dhaka" },
+  {
+    label: "IIUC",
+    value: "iiuc",
+  },
+];
 const FilterMentors = ({ open, setOpen }) => {
-  
+  const [uniList, setUniList] = useState(["all"]);
+  const [uniVal, setUniVal] = useState("");
+  const [companyList, setCompanyList] = useState(["all"]);
+  const [companyVal, setCompanyVal] = useState("");
+  const [tagList, setTagList] = useState(["all"]);
+  const [tagVal, setTagVal] = useState("");
+  const [costList, setCostList] = useState(["all"]);
+  const [costVal, setCostVal] = useState("");
   return (
     <div
       className={`h-full absolute z-10 top-0 left-0 flex ${
@@ -31,10 +66,38 @@ const FilterMentors = ({ open, setOpen }) => {
         </div>
 
         <Accordion type="multiple" collapsible="true" className="p-5 space-y-5">
-          <UniversitiesAccordion/>
-          <CompaniesAccordion/>
-          <TagsAccordion />
-          <CostAccordion />
+          <CommonAccordion
+            title="Universities"
+            originalList={universities}
+            list={uniList}
+            setList={setUniList}
+            val={uniVal}
+            setVal={setUniVal}
+          />
+          <CommonAccordion
+            title="Companies"
+            originalList={companies}
+            list={companyList}
+            setList={setCompanyList}
+            val={companyVal}
+            setVal={setCompanyVal}
+          />
+          <CommonAccordion
+            title="Tags"
+            originalList={tags}
+            list={tagList}
+            setList={setTagList}
+            val={tagVal}
+            setVal={setTagVal}
+          />
+          <CommonAccordion
+            title="Cost"
+            originalList={costs}
+            list={costList}
+            setList={setCostList}
+            val={costVal}
+            setVal={setCostVal}
+          />
         </Accordion>
       </div>
       {open && (
@@ -51,5 +114,3 @@ FilterMentors.propTypes = {
   setOpen: PropTypes.func,
 };
 export default FilterMentors;
-
-
