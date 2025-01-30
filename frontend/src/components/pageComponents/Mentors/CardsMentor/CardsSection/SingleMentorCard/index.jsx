@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 const SingleMentorCard = ({data}) => {
     return (
-        <Link to={`${pathMentorDetails}/1`} className="rounded-xl shadow-lg p-5 md:hover:scale-95 duration-150 ease-in-out">
+        <Link to={`${pathMentorDetails}/${data.id}`} className="rounded-xl shadow-lg p-5 md:hover:scale-95 duration-150 ease-in-out">
             <div className="flex justify-between">
                 <div className="flex flex-col justify-between">
                     <p className="text-2xl">{data.name}</p>
@@ -30,6 +30,7 @@ const SingleMentorCard = ({data}) => {
 };
 SingleMentorCard.propTypes = {
     data: PropTypes.shape({
+        id: PropTypes.number.isRequired,
         name: PropTypes.string.isRequired,
         cost: PropTypes.number.isRequired,
         image: PropTypes.string.isRequired,
