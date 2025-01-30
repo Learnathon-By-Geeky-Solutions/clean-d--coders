@@ -24,10 +24,12 @@ const filterByTags = (mentors, tags) => {
   if (tags[0] === "all") return mentors;
   return mentors.filter((m) => tags.some((tt) => m.tags.includes(tt)));
 };
+
+// mentor store
 const useMentorStore = create((set, get) => ({
   mentors: [],
   allMentors: [],
-  isLoading: true,
+  isLoading: false,
   filterData: {
     companies: ["all"],
     universities: ["all"],
@@ -35,6 +37,8 @@ const useMentorStore = create((set, get) => ({
     tags: ["all"],
   },
   setMentors: async () => {
+    const prev = get()
+    set({...prev, isLoading: true})
     let res = await fetch(apiAllMentors);
     let data = await res.json();
     let temp = {
@@ -89,5 +93,12 @@ const useMentorStore = create((set, get) => ({
       mentors: newMentors,
     }));
   },
+  getMentorByID: async (id) => {
+    let prev = get();
+    if(prev.allMentors.length === 0) await prev.setMentors()
+    prev = get()
+    const mentor = prev.allMentors.find(m => m.id === +id)
+    return mentor
+  }
 }));
 export default useMentorStore;

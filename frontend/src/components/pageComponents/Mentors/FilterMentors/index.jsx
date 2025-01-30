@@ -38,12 +38,12 @@ const FilterMentors = ({ open, setOpen }) => {
       } overflow-hidden`}
     >
       <div
-        className={`h-full overflow-y-auto  transition-all duration-300 ease-in-out bg-gray-200 ${
+        className={`h-full pb-5 overflow-y-auto transition-all duration-300 ease-in-out bg-gray-200 ${
           open ? "w-80" : "w-0"
         }`}
       >
         {/* Menu Side Bar */}
-        <div className="sticky top-0 h-fit">
+        <div className=" h-fit">
           <div className="w-full p-5 border-b-2 flex justify-between items-center">
             <p className="text-2xl font-medium">Filter</p>
             <Button variant="ghost" onClick={() => setOpen(!open)}>
