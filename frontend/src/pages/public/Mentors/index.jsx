@@ -10,7 +10,9 @@ const Mentors = () => {
     useEffect(()=> {
             setMentors()
     },[setMentors])
-    if(mentorsLoading) return <FullScreenLoading />
+    if(mentorsLoading) return <div className='flex-1 relative flex'>
+        <FullScreenLoading />
+    </div> 
     return (
         <div className='flex-1 relative'>
             <FilterMentors open={open} setOpen={setOpen}/>

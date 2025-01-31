@@ -37,8 +37,8 @@ const useMentorStore = create((set, get) => ({
     tags: ["all"],
   },
   setMentors: async () => {
-    const prev = get()
-    set({...prev, isLoading: true})
+    const prev = get();
+    set({ ...prev, isLoading: true });
     let res = await fetch(apiAllMentors);
     let data = await res.json();
     let temp = {
@@ -94,11 +94,9 @@ const useMentorStore = create((set, get) => ({
     }));
   },
   getMentorByID: async (id) => {
-    let prev = get();
-    if(prev.allMentors.length === 0) await prev.setMentors()
-    prev = get()
-    const mentor = prev.allMentors.find(m => m.id === +id)
-    return mentor
-  }
+    const { allMentors, setMentors } = get();
+    if (allMentors.length === 0) await setMentors();
+    return get().allMentors.find((m) => m.id === +id) || null;
+  },
 }));
 export default useMentorStore;

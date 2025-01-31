@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 const SingleMentorCard = ({data}) => {
     return (
-        <Link to={`${pathMentorDetails}/${data.id}`} className="rounded-xl shadow-lg p-5 md:hover:scale-95 duration-150 ease-in-out">
+        <Link to={`${pathMentorDetails}/${data.id}`} className="rounded-xl shadow-lg p-5 md:hover:scale-95 duration-150 ease-in-out" draggable={false}>
             <div className="flex justify-between">
                 <div className="flex flex-col justify-between">
                     <p className="text-2xl">{data.name}</p>
