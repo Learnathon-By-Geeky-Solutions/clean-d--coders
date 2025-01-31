@@ -1,1 +1,1 @@
-export const apiAllMentors = "https://dummyjson.com/c/f37c-2345-42ca-83ce"
+export const apiAllMentors = "https://dummyjson.com/c/612d-3be7-471e-b833"
