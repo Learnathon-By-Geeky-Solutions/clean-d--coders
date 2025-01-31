@@ -15,7 +15,7 @@ const BannerSection = ({ sort, setOpen, setSort }) => {
       <div className="w-full h-[100px] bg-black bg-primary flex justify-center items-center">
         <p className="text-primary-foreground text-4xl">All Mentors</p>
       </div>
-      <div className="flex flex-col md:flex-row justify-between gap-5 items-stretch md:items-center p-5">
+      <div className="flex flex-row-reverse md:flex-row justify-between gap-5 items-stretch md:items-center p-5">
         <Button
           className="flex items-center justify-between"
           onClick={() => setOpen(true)}
