@@ -1,9 +1,10 @@
 import { Img } from "@/components/common";
 import { Button } from "@/components/ui";
+import { getDBValToCamelCase } from "@/utils";
 import { MessageSquareCode, Mic } from "lucide-react";
 import PropTypes from "prop-types";
 
-const BannerSection = ({ image, name }) => {
+const BannerSection = ({ image, name, position }) => {
   return (
     <div className="flex flex-col md:flex-row justify-between gap-5 border-b-2 md:pb-10 pb-5">
       <div className="flex flex-col md:flex-row items-center md:items-stretch gap-5">
@@ -15,7 +16,7 @@ const BannerSection = ({ image, name }) => {
         <div className="flex flex-col items-center md:justify-evenly md:items-start gap-3">
           <p className="font-bold text-2xl md:text-4xl text-primary">{name}</p>
           <p className="font-bold text-primary md:text-2xl opacity-50">
-            Senior Software Engineer
+            {getDBValToCamelCase(position)}
           </p>
         </div>
       </div>
@@ -34,6 +35,7 @@ const BannerSection = ({ image, name }) => {
 BannerSection.propTypes = {
   image: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
+  position: PropTypes.string.isRequired,
 };
 
 export default BannerSection;

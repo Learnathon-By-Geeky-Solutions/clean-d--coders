@@ -8,16 +8,14 @@ const MentorDetailsSection = ({data}) => {
            <BannerSection
             name={data.name}
             image={data.image}
+            position={data.position}
            /> 
            <TabSection data={data}/>
         </div>
     );
 };
 MentorDetailsSection.propTypes = {
-    data: PropTypes.shape({
-        name: PropTypes.string.isRequired,
-        image: PropTypes.string.isRequired,
-    }).isRequired,
+    data: PropTypes.object.isRequired,
 };
 
 export default MentorDetailsSection;
