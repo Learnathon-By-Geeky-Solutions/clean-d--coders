@@ -8,7 +8,7 @@ const SignIn = () => {
   };
 
   return (
-    <div className="flex flex-col lg:flex-row ">
+    <div className="flex flex-col md:flex-row ">
       <LeftAuthForm />
       <RightAuthForm
         title="Login your account"
