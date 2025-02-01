@@ -4,8 +4,8 @@ const LeftAuthForm = () => {
   return (
     <div className="hidden lg:flex lg:w-1/2 flex-col items-center justify-center px-12">
       <div className="max-w-md">
-        <h1 className="text-4xl font-bold mb-6">MentorConnect</h1>
-        <p className="text-xl mb-8">
+        <h1 className="text-4xl font-bold mb-6">Mentor Connect</h1>
+        <p className="text-xl mb-8 text-gray-500">
           Connect with experienced professionals and alumni to guide your career journey
         </p>
         <div className="space-y-4">
