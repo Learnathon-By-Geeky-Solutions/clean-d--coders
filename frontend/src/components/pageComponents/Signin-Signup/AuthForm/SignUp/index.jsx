@@ -1,17 +1,14 @@
-import { useUserStore } from "@/store";
 import LeftAuthForm from "../Left";
 import RightAuthForm from "../Right";
 const SignUp = () => {
-
-  const {user,setUser} = useUserStore();
-  const handleSubmit = (email,password) => {
-    console.log("Sign up:", { email, password });
-    setUser()
-    console.log(user)
+  const handleSubmit = async (formData) => {
+    formData.preventDefault();
+    console.log("Sign up:", formData.target.email.value, 
+      formData.target.password.value);
   };
 
   return (
-    <div className="flex flex-col md:flex-row ">
+    <div className="flex flex-col md:flex-row">
       <LeftAuthForm />
       <RightAuthForm
         title="Create your account"

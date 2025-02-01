@@ -3,8 +3,9 @@ import RightAuthForm from "../Right";
 
 const SignIn = () => {
   
-  const handleSubmit = (email,password) => {
-    console.log("Sign up:", { email, password });
+  const handleSubmit = (formData) => {
+    formData.preventDefault();
+    console.log("Sign in:", formData.target.email.value, formData.target.password.value);
   };
 
   return (

@@ -4,13 +4,8 @@ import PropTypes from 'prop-types';
 import { useState } from 'react';
 
 const RightAuthForm = ({title, buttonName, routeName, handleSubmit, routePath}) => {
-
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-
   const onSubmit = (e) => {
-    e.preventDefault();
-    handleSubmit(email, password);
+    handleSubmit(e);
   };
 
 
@@ -36,8 +31,8 @@ const RightAuthForm = ({title, buttonName, routeName, handleSubmit, routePath}) 
                 type="email"
                 required
                 className="mt-1 block w-full p-2 rounded-md border-gray-300 shadow-sm focus:border-accent focus:ring-accent"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+               // value={email}
+                // onChange={(e) => setEmail(e.target.value)}
               />
             </div>
 
@@ -51,8 +46,8 @@ const RightAuthForm = ({title, buttonName, routeName, handleSubmit, routePath}) 
                 type="password"
                 required
                 className="mt-1 p-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-accent focus:ring-accent"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
+               // value={password}
+                // onChange={(e) => setPassword(e.target.value)}
               />
             </div>
           </div>
