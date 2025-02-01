@@ -1,0 +1,1 @@
+export const isValidRole = (userRoles, accessRoles) => userRoles.some(r => accessRoles.includes(r))
