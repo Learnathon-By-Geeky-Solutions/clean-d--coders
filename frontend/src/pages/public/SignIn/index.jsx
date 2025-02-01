@@ -1,13 +1,11 @@
-import { LeftSignUp } from "@/components";
-import { RightSignIn } from "@/components/pageComponents/SignIn";
+import { SignInPage } from "@/components";
 import { useTitle } from "@/hooks";
 
 const SignIn = () => {
     useTitle("Sign In");
     return (
-        <div className="flex">
-          <LeftSignUp/>  
-          <RightSignIn/>
+        <div >
+         <SignInPage/>
         </div>
     );
 };

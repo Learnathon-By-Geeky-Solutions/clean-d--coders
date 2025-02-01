@@ -1,4 +1,6 @@
-const LeftSignUp = () => {
+import React from 'react'
+
+const LeftAuthForm = () => {
   return (
     <div className="hidden lg:flex lg:w-1/2 flex-col items-center justify-center px-12">
       <div className="max-w-md">
@@ -37,4 +39,4 @@ const LeftSignUp = () => {
   )
 }
 
-export default LeftSignUp
+export default LeftAuthForm
