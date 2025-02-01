@@ -17,6 +17,21 @@ const RightAuthForm = ({title, buttonName, routeName, handleSubmit, routePath}) 
 
         <form className="mt-8 space-y-6" onSubmit={onSubmit}>
           <div className="space-y-4">
+            {
+              (buttonName === "Sign up") && <div>
+              <label htmlFor="full_name" className="block text-sm font-medium text-gray-700">
+               Full Name
+              </label>
+              <input
+                id="full_name"
+                name="full_name"
+                type="text"
+                required
+                className="mt-1 block w-full p-2 rounded-md border-gray-300 shadow-sm border-2 focus:border-accent focus:ring-accent"
+              />
+            </div>
+
+            }
             <div>
               <label htmlFor="email" className="block text-sm font-medium text-gray-700">
                 Email address
@@ -26,7 +41,7 @@ const RightAuthForm = ({title, buttonName, routeName, handleSubmit, routePath}) 
                 name="email"
                 type="email"
                 required
-                className="mt-1 block w-full p-2 rounded-md border-gray-300 shadow-sm focus:border-accent focus:ring-accent"
+                className="mt-1 block w-full p-2 rounded-md border-gray-300 shadow-sm border-2 focus:border-accent focus:ring-accent"
               />
             </div>
 
@@ -39,7 +54,7 @@ const RightAuthForm = ({title, buttonName, routeName, handleSubmit, routePath}) 
                 name="password"
                 type="password"
                 required
-                className="mt-1 p-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-accent focus:ring-accent"
+                className="mt-1 p-2 block w-full rounded-md border-gray-300 shadow-sm border-2 focus:border-accent focus:ring-accent"
               />
             </div>
           </div>

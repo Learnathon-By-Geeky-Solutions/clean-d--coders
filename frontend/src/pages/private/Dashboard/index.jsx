@@ -9,13 +9,13 @@ import { Outlet } from "react-router";
 const Dashboard = () => {
   useTitle("Dashboard");
   return (
-      <SidebarProvider>
-        <DashboardSidebar />
-        <>
-          <SidebarTrigger />
-          <Outlet />
-        </>
-      </SidebarProvider>
+    <SidebarProvider>
+      <DashboardSidebar />
+      <>
+        <SidebarTrigger />
+        <Outlet />
+      </>
+    </SidebarProvider>
   );
 };
 
