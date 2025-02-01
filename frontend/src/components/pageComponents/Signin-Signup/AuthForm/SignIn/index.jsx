@@ -1,0 +1,25 @@
+import LeftAuthForm from "../Left";
+import RightAuthForm from "../Right";
+
+const SignIn = () => {
+  
+  const handleSubmit = (formData) => {
+    formData.preventDefault();
+    alert("Signed in sucessfully");
+  };
+
+  return (
+    <div className="flex flex-col md:flex-row ">
+      <LeftAuthForm />
+      <RightAuthForm
+        title="Login your account"
+        buttonName="Sign in"
+        routeName="Sign up"
+        handleSubmit={handleSubmit}
+        routePath="/sign-up"
+      />
+    </div>
+  );
+};
+
+export default SignIn;

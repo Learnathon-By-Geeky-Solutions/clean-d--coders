@@ -1,14 +1,20 @@
 import { Footer, Navbar } from "@/components";
 import { useUserStore } from "@/store";
 import { useEffect } from "react";
-import { Outlet, useLocation } from "react-router";
+import { Navigate, Outlet, useLocation } from "react-router";
 
 const App = () => {
   const {pathname} = useLocation()
-  const {setUser} = useUserStore()
+  const {user,  setUser} = useUserStore()
   useEffect(() => {
     setUser()
   }, [setUser])
+
+  if(user === null){
+    return <Navigate to="/sign-up" replace/>
+  }
+ 
+
   if(pathname.startsWith('/dashboard'))
     return (
       <Outlet />
