@@ -5,7 +5,7 @@ const SignIn = () => {
   
   const handleSubmit = (formData) => {
     formData.preventDefault();
-    console.log("Sign in:", formData.target.email.value, formData.target.password.value);
+    alert("Signed in sucessfully");
   };
 
   return (

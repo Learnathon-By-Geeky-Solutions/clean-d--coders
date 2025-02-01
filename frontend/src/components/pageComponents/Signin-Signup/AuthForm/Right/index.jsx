@@ -1,15 +1,11 @@
 import { FaGoogle, FaGithub, FaLinkedin } from 'react-icons/fa';
 import { Link } from 'react-router';
 import PropTypes from 'prop-types';
-import { useState } from 'react';
 
 const RightAuthForm = ({title, buttonName, routeName, handleSubmit, routePath}) => {
   const onSubmit = (e) => {
     handleSubmit(e);
   };
-
-
-
 
   return (
     <div className="w-full lg:w-1/2 flex items-center justify-center p-8 ">
@@ -31,8 +27,6 @@ const RightAuthForm = ({title, buttonName, routeName, handleSubmit, routePath}) 
                 type="email"
                 required
                 className="mt-1 block w-full p-2 rounded-md border-gray-300 shadow-sm focus:border-accent focus:ring-accent"
-               // value={email}
-                // onChange={(e) => setEmail(e.target.value)}
               />
             </div>
 
@@ -46,8 +40,6 @@ const RightAuthForm = ({title, buttonName, routeName, handleSubmit, routePath}) 
                 type="password"
                 required
                 className="mt-1 p-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-accent focus:ring-accent"
-               // value={password}
-                // onChange={(e) => setPassword(e.target.value)}
               />
             </div>
           </div>
