@@ -16,6 +16,7 @@ const Img = ({src, lowSrc = "", className, alt}) => {
             alt={alt}
             src={imageSrc}
             className={className}
+            draggable={false}
             style={{
                 filter: imageSrc === src ? "none" : "blur(5px)",
             }}
