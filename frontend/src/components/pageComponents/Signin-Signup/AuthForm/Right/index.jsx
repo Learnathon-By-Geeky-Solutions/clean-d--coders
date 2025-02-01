@@ -94,6 +94,6 @@ RightAuthForm.propTypes = {
   routeName: PropTypes.string.isRequired,
   handleSubmit: PropTypes.func.isRequired,
   routePath: PropTypes.string.isRequired,
-};
+ };
 
 export default RightAuthForm;
