@@ -67,7 +67,7 @@ const DashboardSidebar = () => {
   ];
   const adminItems = [
     {
-      title: "Feedbacks",
+      title: "Users",
       url: pathAdminUsers,
       icon: Users,
     },
