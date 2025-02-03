@@ -1,9 +1,11 @@
-import { TableSkeleton } from "@/components";
+import { DashboardHeading, TableSkeleton } from "@/components";
+import { useTitle } from "@/hooks";
 
 const Users = () => {
+  useTitle("Users");
   return (
     <div className="flex-1 overflow-hidden">
-      All Users
+      <DashboardHeading>Users</DashboardHeading>
       <TableSkeleton />
     </div>
   );
