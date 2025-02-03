@@ -3,17 +3,27 @@ import PropTypes from "prop-types";
 
 import { cn } from "@/lib/utils"
 
-const Table = React.forwardRef(({ className, ...props }, ref) => (
+const Table = React.forwardRef(({ className,children, ...props }, ref) => (
   <div className="relative w-full overflow-auto">
     <table
       ref={ref}
       className={cn("w-full caption-bottom text-sm", className)}
       {...props} />
+        <thead>
+        <tr>
+          <th className="px-4 py-2">Header</th>
+        </tr>
+      </thead>
+      <tbody>
+        {children}
+      </tbody>
   </div>
 ))
 Table.displayName = "Table"
 Table.propTypes = {
-  className: PropTypes.string
+  className: PropTypes.string,
+    children: PropTypes.node
+
 };
 
 
