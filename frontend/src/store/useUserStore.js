@@ -4,7 +4,7 @@ const useUserStore = create((set) => ({
   isLoading: true,
   setUser: async () => {
     await new Promise((resolve) => setTimeout(resolve, 2000));
-    set({ user: { role: ["admin"] }, isLoading: false });
+    set({ user: { role: ["user", "mentee", "mentor"] }, isLoading: false });
   },
   clearUser: () => set({ user: null, isLoading: false }),
 }));

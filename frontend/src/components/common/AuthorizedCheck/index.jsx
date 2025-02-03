@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { useUserStore } from "@/store";
 import { memo } from "react";
 import { FullScreenLoading } from "@/components/layout";
-import { isValidRole } from "@/utils";
+import { isValidRole, pathProfile } from "@/utils";
 
 const AuthorizedCheck = memo(({ children, role }) => {
   const { user, isLoading } = useUserStore();
@@ -12,7 +12,7 @@ const AuthorizedCheck = memo(({ children, role }) => {
   else if (!user?.role) return <Navigate to="/sign-in" />;
   else if (isValidRole(user.role, role)) return children;
 
-  return <Navigate to="/dashboard/common/profile" />;
+  return <Navigate to={pathProfile} />;
 });
 AuthorizedCheck.displayName = "AuthorizedCheck";
 
