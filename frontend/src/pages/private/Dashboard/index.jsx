@@ -10,14 +10,16 @@ import { Outlet } from "react-router";
 
 const Dashboard = () => {
   useTitle("Dashboard");
-  const {isLoading} = useUserStore()
-  if(isLoading) return <FullScreenLoading fullScreen/>
+  const { isLoading } = useUserStore();
+  if (isLoading) return <FullScreenLoading fullScreen />;
   return (
     <SidebarProvider>
       <DashboardSidebar />
       <>
-        <SidebarTrigger />
-        <Outlet />
+        <SidebarTrigger className="fixed top-0 left-0" />
+        <div className="w-full overflow-hidden p-5">
+          <Outlet />
+        </div>
       </>
     </SidebarProvider>
   );

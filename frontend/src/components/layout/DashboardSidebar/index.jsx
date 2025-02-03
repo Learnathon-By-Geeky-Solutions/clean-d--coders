@@ -22,7 +22,7 @@ import {
   UserRound,
   Users,
 } from "lucide-react";
-import { Button } from "@/components/ui";
+import { Button, SidebarTrigger } from "@/components/ui";
 import { Img } from "@/components/common";
 import { NavLogo } from "@/assets";
 import {
@@ -38,8 +38,10 @@ import {
   pathAdminUsers,
 } from "@/utils";
 import { useUserStore } from "@/store";
+import { useSidebar } from "@/hooks";
 const DashboardSidebar = () => {
   const { user } = useUserStore();
+  const { isMobile } = useSidebar();
   // Menu items.
   const menteeItems = [
     {
@@ -77,10 +79,11 @@ const DashboardSidebar = () => {
     <Sidebar>
       <div className="bg-gray-200 flex flex-col items-center justify-between h-full">
         <div className="w-full">
-          <SidebarHeader>
+          <SidebarHeader className="flex justify-between items-center flex-row">
             <Link to={pathHome} className="p-2 pb-0">
               <Img alt="Navbar Logo" src={NavLogo} className="h-8" />
             </Link>
+            {!isMobile && <SidebarTrigger />}
           </SidebarHeader>
           <SidebarContent>
             <SidebarGroup>
