@@ -3,7 +3,6 @@ const useSessionStore = create((set, get) => ({
   sessions: null,
   isLoading: true,
   setSessions: async () => {
-    get();
     await new Promise((resolve) => setTimeout(resolve, 2000));
     set({
       sessions: {
@@ -12,22 +11,29 @@ const useSessionStore = create((set, get) => ({
             name: "Mentee 1",
             goals: [
               {
+                id : 1,
                 name: "Goal 1",
                 milestones: [
                   {
-                    name: "Milestone 3",
+                    name: "Milestone 1: Complete Data Science Cerfication Course",
                     tasks: [
-                      { name: "Task 1", completed: true },
-                      { name: "Task 2", completed: false },
+                      { name: "Python Basics", completed: true },
+                      { name: "Data Visualization", completed: false },
+                      { name: "Machine Learnign", completed: false }
+                     
                     ],
                   },
                   {
-                    name: "Milestone 4",
-                    tasks: [
-                      { name: "Task 3", completed: false },
-                      { name: "Task 4", completed: true },
-                    ],
-                  },
+                    "name": "Milestone 2: Build a portfolio with 3 projects",
+                    "tasks": [
+                      { "name": "Complete 3 projects on Data Science", "completed": true },
+                      { "name": "Keep the project in GitHub", "completed": false },
+                      { "name": "Write documentation for each project", "completed": false },
+                      { "name": "Add project descriptions and links to the portfolio website", "completed": false },
+                      { "name": "Review and polish the portfolio", "completed": false }
+                    ]
+                  }
+                  
                 ],
               },
             ],
@@ -38,22 +44,28 @@ const useSessionStore = create((set, get) => ({
             name: "Mentor 2",
             goals: [
               {
-                name: "Goal 2",
+                id : 2,
+                name: "Goal 1",
                 milestones: [
                   {
-                    name: "Milestone 3",
+                    name: "Milestone 1: Complete Data Science Cerfication Course",
                     tasks: [
-                      { name: "Task 5", completed: true },
-                      { name: "Task 6", completed: false },
-                    ],
+                      { name: "Python Basics", completed: true },
+                      { name: "Data Visualization", completed: false },
+                      { name: "Machine Learnign", completed: false }
+                    ]
                   },
                   {
-                    name: "Milestone 4",
-                    tasks: [
-                      { name: "Task 7", completed: false },
-                      { name: "Task 8", completed: true },
-                    ],
-                  },
+                    "name": "Milestone 2: Build a portfolio with 3 projects",
+                    "tasks": [
+                      { "name": "Complete 3 projects on Data Science", "completed": true },
+                      { "name": "Keep the project in GitHub", "completed": false },
+                      { "name": "Write documentation for each project", "completed": false },
+                      { "name": "Add project descriptions and links to the portfolio website", "completed": false },
+                      { "name": "Review and polish the portfolio", "completed": false }
+                    ]
+                  }
+                  
                 ],
               },
             ],
@@ -63,5 +75,8 @@ const useSessionStore = create((set, get) => ({
       isLoading: false,
     });
   },
+  getGoalStatus: (id)=>{
+    return "completed";
+  }
 }));
 export default useSessionStore;
