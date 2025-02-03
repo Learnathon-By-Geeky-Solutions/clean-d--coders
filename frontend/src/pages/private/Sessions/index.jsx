@@ -3,13 +3,12 @@ import {
   FullScreenLoading,
   OnlyUserRole,
   TabButtons,
+  SessionList,
 } from "@/components";
 import { useTitle } from "@/hooks";
 import { useSessionStore, useUserStore } from "@/store";
 import { isValidRole } from "@/utils";
 import { useEffect, useState } from "react";
-import SessionList from "./SessionList";
-
 const Sessions = () => {
   useTitle("Sessions");
   const { user } = useUserStore();
