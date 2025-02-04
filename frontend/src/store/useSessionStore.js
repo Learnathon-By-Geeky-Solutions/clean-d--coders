@@ -8,11 +8,11 @@ const useSessionStore = create((set, get) => ({
       sessions: {
         mentor: [
           {
-            name: "Mentee 1",
+            name: "Reaz Tawsif",
             goals: [
               {
                 id : 1,
-                name: "Goal 1",
+                name: "Start a career in Data Science",
                 milestones: [
                   {
                     name: "Milestone 1: Complete Data Science Cerfication Course",
@@ -41,11 +41,11 @@ const useSessionStore = create((set, get) => ({
         ],
         mentee: [
           {
-            name: "Mentor 2",
+            name: "Mahamudul Hasan",
             goals: [
               {
                 id : 2,
-                name: "Goal 1",
+                name: "Start a career in Data Science",
                 milestones: [
                   {
                     name: "Milestone 1: Complete Data Science Cerfication Course",
