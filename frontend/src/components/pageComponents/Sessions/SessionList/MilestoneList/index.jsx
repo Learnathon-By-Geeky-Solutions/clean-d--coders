@@ -68,10 +68,10 @@ MilestoneList.propTypes = {
     PropTypes.shape({
       name: PropTypes.string.isRequired,
       tasks: PropTypes.array.isRequired,
-      goalId: PropTypes.number.isRequired,
     })
   ).isRequired,
   role: PropTypes.string.isRequired,
+  goalId: PropTypes.number.isRequired,
 };
 
 export default MilestoneList;
