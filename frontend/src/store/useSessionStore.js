@@ -6,251 +6,187 @@ const useSessionStore = create((set, get) => ({
     await new Promise((resolve) => setTimeout(resolve, 2000));
     set({
       sessions: {
-          mentor: [
-            {
-              name: "Reaz Tawsif",
-              image: "https://img.freepik.com/premium-vector/male-avatar-flat-icon-design-vector-illustration_549488-103.jpg",
-              goals: [
-                {
-                  id: 1,
-                  name: "Start a career in Data Science",
-                  milestones: [
-                    {
-                      name: "Milestone 1: Complete Data Science Certification Course",
-                      tasks: [
-                        { name: "Python Basics", completed: true },
-                        { name: "Data Visualization", completed: false },
-                        { name: "Machine Learning", completed: false }
-                      ]
-                    },
-                    {
-                      name: "Milestone 2: Build a portfolio with 3 projects",
-                      tasks: [
-                        { name: "Complete 3 projects on Data Science", completed: true },
-                        { name: "Keep the project in GitHub", completed: false },
-                        { name: "Write documentation for each project", completed: false },
-                        { name: "Add project descriptions and links to the portfolio website", completed: false },
-                        { name: "Review and polish the portfolio", completed: false }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              name: "Sarah Ahmed",
-              image: "https://img.freepik.com/premium-vector/avatar-profile-icon-flat-style-female-user-profile-vector-illustration-isolated-background-women-profile-sign-business-concept_157943-38866.jpg",
-              goals: [
-                {
-                  id: 3,
-                  name: "Improve public speaking skills",
-                  milestones: [
-                    {
-                      name: "Milestone 1: Join a public speaking club",
-                      tasks: [
-                        { name: "Research public speaking clubs", completed: true },
-                        { name: "Attend a trial session", completed: false },
-                        { name: "Enroll in the club", completed: false }
-                      ]
-                    },
-                    {
-                      name: "Milestone 2: Prepare and deliver 3 speeches",
-                      tasks: [
-                        { name: "Select speech topics", completed: true },
-                        { name: "Write speech drafts", completed: false },
-                        { name: "Practice delivery", completed: false },
-                        { name: "Deliver the speeches", completed: false },
-                        { name: "Receive and incorporate feedback", completed: false }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              name: "Michael Johnson",
-              image: "https://img.freepik.com/premium-vector/male-avatar-flat-icon-design-vector-illustration_549488-103.jpg",
-              goals: [
-                {
-                  id: 4,
-                  name: "Become proficient in Git",
-                  milestones: [
-                    {
-                      name: "Milestone 1: Complete a Git course",
-                      tasks: [
-                        { name: "Enroll in a Git course", completed: true },
-                        { name: "Complete course modules", completed: false },
-                        { name: "Pass the final exam", completed: false }
-                      ]
-                    },
-                    {
-                      name: "Milestone 2: Apply Git in a real project",
-                      tasks: [
-                        { name: "Create a Git repository", completed: true },
-                        { name: "Collaborate with teammates", completed: false },
-                        { name: "Merge branches", completed: false },
-                        { name: "Resolve conflicts", completed: false },
-                        { name: "Document the workflow", completed: false }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              name: "Olivia Brown",
-              image: "https://img.freepik.com/premium-vector/avatar-profile-icon-flat-style-female-user-profile-vector-illustration-isolated-background-women-profile-sign-business-concept_157943-38866.jpg",
-              goals: [
-                {
-                  id: 5,
-                  name: "Learn Flutter and build mobile apps",
-                  milestones: [
-                    {
-                      name: "Milestone 1: Set up Flutter development environment",
-                      tasks: [
-                        { name: "Install Flutter SDK", completed: true },
-                        { name: "Configure IDE", completed: false },
-                        { name: "Run a sample project", completed: false }
-                      ]
-                    },
-                    {
-                      name: "Milestone 2: Develop a basic mobile app",
-                      tasks: [
-                        { name: "Design app layout", completed: true },
-                        { name: "Implement UI components", completed: false },
-                        { name: "Add functionality", completed: false },
-                        { name: "Test and debug", completed: false },
-                        { name: "Deploy the app", completed: false }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ],
-          mentee: [
-            {
-              name: "Mahamudul Hasan",
-              image: "https://img.freepik.com/premium-vector/male-avatar-flat-icon-design-vector-illustration_549488-103.jpg",
-              goals: [
-                {
-                  id: 2,
-                  name: "Start a career in Data Science",
-                  milestones: [
-                    {
-                      name: "Milestone 1: Complete Data Science Certification Course",
-                      tasks: [
-                        { name: "Python Basics", completed: true },
-                        { name: "Data Visualization", completed: false },
-                        { name: "Machine Learning", completed: false }
-                      ]
-                    },
-                    {
-                      name: "Milestone 2: Build a portfolio with 3 projects",
-                      tasks: [
-                        { name: "Complete 3 projects on Data Science", completed: true },
-                        { name: "Keep the project in GitHub", completed: false },
-                        { name: "Write documentation for each project", completed: false },
-                        { name: "Add project descriptions and links to the portfolio website", completed: false },
-                        { name: "Review and polish the portfolio", completed: false }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              name: "Nadia Rahman",
-              image: "https://img.freepik.com/premium-vector/avatar-profile-icon-flat-style-female-user-profile-vector-illustration-isolated-background-women-profile-sign-business-concept_157943-38866.jpg",
-              goals: [
-                {
-                  id: 6,
-                  name: "Improve coding skills in C++",
-                  milestones: [
-                    {
-                      name: "Milestone 1: Complete a C++ course",
-                      tasks: [
-                        { name: "Enroll in a C++ course", completed: true },
-                        { name: "Complete course modules", completed: false },
-                        { name: "Pass the final exam", completed: false }
-                      ]
-                    },
-                    {
-                      name: "Milestone 2: Work on C++ projects",
-                      tasks: [
-                        { name: "Select project ideas", completed: true },
-                        { name: "Write project code", completed: false },
-                        { name: "Test and debug", completed: false },
-                        { name: "Document the projects", completed: false },
-                        { name: "Showcase projects on GitHub", completed: false }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              name: "Arif Hossain",
-              image: "https://img.freepik.com/premium-vector/male-avatar-flat-icon-design-vector-illustration_549488-103.jpg",
-              goals: [
-                {
-                  id: 7,
-                  name: "Master data analysis with Python",
-                  milestones: [
-                    {
-                      name: "Milestone 1: Learn data analysis libraries",
-                      tasks: [
-                        { name: "Study pandas library", completed: true },
-                        { name: "Learn NumPy basics", completed: true },
-                        { name: "Explore Matplotlib for visualization", completed: true }
-                      ]
-                    },
-                    {
-                      name: "Milestone 2: Analyze real-world datasets",
-                      tasks: [
-                        { name: "Find suitable datasets", completed: true },
-                        { name: "Clean and preprocess data", completed: true },
-                        { name: "Perform exploratory data analysis", completed: true },
-                        { name: "Visualize results", completed: true },
-                        { name: "Report findings", completed: true }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              name: "Sumiya Khatun",
-              image: "https://img.freepik.com/premium-vector/avatar-profile-icon-flat-style-female-user-profile-vector-illustration-isolated-background-women-profile-sign-business-concept_157943-38866.jpg",
-              goals: [
-                {
-                  id: 8,
-                  name: "Learn web development",
-                  milestones: [
-                    {
-                      name: "Milestone 1: Master front-end technologies",
-                      tasks: [
-                        { name: "Learn HTML basics", completed: false },
-                        { name: "Study CSS for styling", completed: false },
-                        { name: "Understand JavaScript fundamentals", completed: false }
-                      ]
-                    },
-                    {
-                      name: "Milestone 2: Build a personal website",
-                      tasks: [
-                        { name: "Design website layout", completed: false },
-                        { name: "Develop static pages", completed: false },
-                        { name: "Implement interactive features", completed: false },
-                        { name: "Test and deploy website", completed: false },
-                        { name: "Collect user feedback", completed: false }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        }
+        mentor: [
+          {
+            name: "Liam Thompson",
+            image: "https://img.freepik.com/free-vector/businessman-character-avatar_24877-60111.jpg",
+            goals: [
+              {
+                id: 1,
+                name: "Become a Cloud Computing Expert",
+                milestones: [
+                  {
+                    name: "Milestone 1: Get AWS Certified",
+                    tasks: [
+                      { name: "Complete AWS fundamentals course", completed: true },
+                      { name: "Practice hands-on labs", completed: false },
+                      { name: "Pass the AWS certification exam", completed: false }
+                    ]
+                  },
+                  {
+                    name: "Milestone 2: Deploy scalable applications",
+                    tasks: [
+                      { name: "Set up a cloud-based web app", completed: true },
+                      { name: "Implement auto-scaling and load balancing", completed: false },
+                      { name: "Optimize cost and security measures", completed: false },
+                      { name: "Monitor and troubleshoot performance", completed: false }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            name: "Sophia White",
+            image: "https://img.freepik.com/free-vector/young-woman-avatar-character_24877-15417.jpg",
+            goals: [
+              {
+                id: 2,
+                name: "Master UI/UX Design",
+                milestones: [
+                  {
+                    name: "Milestone 1: Learn UI/UX principles",
+                    tasks: [
+                      { name: "Study design thinking concepts", completed: true },
+                      { name: "Learn wireframing tools", completed: false },
+                      { name: "Create mockups for an app", completed: false }
+                    ]
+                  },
+                  {
+                    name: "Milestone 2: Build a portfolio",
+                    tasks: [
+                      { name: "Design three portfolio projects", completed: true },
+                      { name: "Create a personal website", completed: false },
+                      { name: "Refine project presentations", completed: false },
+                      { name: "Apply for UI/UX design roles", completed: false }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            name: "Daniel Roberts",
+            image: "https://img.freepik.com/free-vector/male-avatar-profile-picture-vector-illustration_268834-538.jpg",
+            goals: [
+              {
+                id: 3,
+                name: "Become an Ethical Hacker",
+                milestones: [
+                  {
+                    name: "Milestone 1: Learn cybersecurity basics",
+                    tasks: [
+                      { name: "Study network security fundamentals", completed: true },
+                      { name: "Explore ethical hacking tools", completed: false },
+                      { name: "Set up a personal penetration testing lab", completed: false }
+                    ]
+                  },
+                  {
+                    name: "Milestone 2: Earn a security certification",
+                    tasks: [
+                      { name: "Prepare for CEH certification", completed: true },
+                      { name: "Complete security-related projects", completed: false },
+                      { name: "Contribute to open-source security tools", completed: false },
+                      { name: "Apply for cybersecurity roles", completed: false }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        mentee: [
+          {
+            name: "Emma Clark",
+            image: "https://img.freepik.com/free-vector/female-avatar-profile-picture-vector-illustration_268834-538.jpg",
+            goals: [
+              {
+                id: 4,
+                name: "Learn Python for Automation",
+                milestones: [
+                  {
+                    name: "Milestone 1: Master Python basics",
+                    tasks: [
+                      { name: "Understand Python syntax", completed: true },
+                      { name: "Learn data structures and loops", completed: false },
+                      { name: "Write simple automation scripts", completed: false }
+                    ]
+                  },
+                  {
+                    name: "Milestone 2: Automate real-world tasks",
+                    tasks: [
+                      { name: "Develop a web scraping bot", completed: true },
+                      { name: "Automate file organization", completed: false },
+                      { name: "Write scripts for email automation", completed: false },
+                      { name: "Deploy scripts for daily workflow optimization", completed: false }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            name: "Noah Patel",
+            image: "https://img.freepik.com/free-vector/businessman-character-avatar_24877-60111.jpg",
+            goals: [
+              {
+                id: 5,
+                name: "Build an AI-powered chatbot",
+                milestones: [
+                  {
+                    name: "Milestone 1: Understand NLP basics",
+                    tasks: [
+                      { name: "Study NLP fundamentals", completed: true },
+                      { name: "Learn about chatbots and intents", completed: true },
+                      { name: "Experiment with text preprocessing techniques", completed: true }
+                    ]
+                  },
+                  {
+                    name: "Milestone 2: Develop and deploy the chatbot",
+                    tasks: [
+                      { name: "Train chatbot using Rasa or Dialogflow", completed: true },
+                      { name: "Integrate chatbot with a messaging platform", completed: true },
+                      { name: "Optimize responses using feedback", completed: true },
+                      { name: "Launch chatbot in a real-world scenario", completed: true }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            name: "Lily Adams",
+            image: "https://img.freepik.com/free-vector/businesswoman-character-avatar_24877-60111.jpg",
+            goals: [
+              {
+                id: 6,
+                name: "Become a JavaScript Developer",
+                milestones: [
+                  {
+                    name: "Milestone 1: Learn JavaScript fundamentals",
+                    tasks: [
+                      { name: "Master variables and functions", completed: false },
+                      { name: "Understand DOM manipulation", completed: false },
+                      { name: "Work with ES6+ features", completed: false }
+                    ]
+                  },
+                  {
+                    name: "Milestone 2: Build a dynamic web application",
+                    tasks: [
+                      { name: "Design app architecture", completed: false },
+                      { name: "Develop core application features", completed: false },
+                      { name: "Implement authentication and authorization", completed: false },
+                      { name: "Deploy the web app online", completed: false },
+                      { name: "Gather user feedback for improvements", completed: false }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+      
       ,
       isLoading: false,
     });
@@ -282,6 +218,7 @@ const useSessionStore = create((set, get) => ({
     return "not started";
   },
   getMilestoneProgress: (goalId, milestoneName) => {
+    console.log(goalId, milestoneName);
     const { sessions } = get();
     if (!sessions) return null;
 
@@ -298,7 +235,6 @@ const useSessionStore = create((set, get) => ({
     const progressPercentage = (completedTasks / totalTasks) * 100;
 
     return {
-    
       progressPercentage: progressPercentage.toFixed(0) // returns percentage with 2 decimal places
     };
   }
