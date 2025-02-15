@@ -1,0 +1,104 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MentorConnect.API", "MentorConnect.API\MentorConnect.API.csproj", "{EA881B85-DC98-418C-B4AB-DAA773C357A7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{A9D4D09B-1837-41AA-A915-719F303B6D4A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Users", "Users", "{3EC879E2-1126-419F-AEA9-7845524D69A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MentorConnect.Users.API", "Modules\Users\MentorConnect.Users.API\MentorConnect.Users.API.csproj", "{EE8D4E97-B5B4-4248-9A07-4D7A057237D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MentorConnect.Users.Application", "Modules\Users\MentorConnect.Users.Application\MentorConnect.Users.Application.csproj", "{BE1A2DDB-28C1-4B48-9281-A2738BCA5642}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MentorConnect.Users.Domain", "Modules\Users\MentorConnect.Users.Domain\MentorConnect.Users.Domain.csproj", "{644AEF35-8FEB-43DE-864B-0960B8973439}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MentorConnect.Users.Infrastructure", "Modules\Users\MentorConnect.Users.Infrastructure\MentorConnect.Users.Infrastructure.csproj", "{BB926B6C-794B-444E-B886-A720F2C30E9A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BuildingBlocks", "BuildingBlocks", "{7266C4A9-E384-DC00-0EB6-47F6002CFBA7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MentorConnect.BuildingBlocks.SharedKernel", "BuildingBlocks\MentorConnect.BuildingBlocks.SharedKernel\MentorConnect.BuildingBlocks.SharedKernel.csproj", "{25B438AB-7332-47B5-881C-E1038BAF328A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MentorConnect.BuildingBlocks.Infrastructure", "BuildingBlocks\MentorConnect.BuildingBlocks.Infrastructure\MentorConnect.BuildingBlocks.Infrastructure.csproj", "{3EFFD80D-9F87-45F5-AF37-90E2A98EC237}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Goals", "Goals", "{75CD12A9-ED6F-4281-E476-CEE2057EC95C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MentorConnect.Goals.API", "Modules\Goals\MentorConnect.Goals.API\MentorConnect.Goals.API.csproj", "{DEEAE17D-BF8D-434F-8F46-EAC1F4968510}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MentorConnect.Goals.Application", "Modules\Goals\MentorConnect.Goals.Application\MentorConnect.Goals.Application.csproj", "{4E7A497F-6A8C-44B1-A572-D9BA42316281}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MentorConnect.Goals.Infrastructure", "Modules\Goals\MentorConnect.Goals.Infrastructure\MentorConnect.Goals.Infrastructure.csproj", "{6BBA401D-291E-4833-A8AC-E425E7128A5E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MentorConnect.Goals.Domain", "Modules\Goals\MentorConnect.Goals.Domain\MentorConnect.Goals.Domain.csproj", "{00998568-234D-478C-9E61-592E8EE35225}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EA881B85-DC98-418C-B4AB-DAA773C357A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA881B85-DC98-418C-B4AB-DAA773C357A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA881B85-DC98-418C-B4AB-DAA773C357A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA881B85-DC98-418C-B4AB-DAA773C357A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE8D4E97-B5B4-4248-9A07-4D7A057237D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE8D4E97-B5B4-4248-9A07-4D7A057237D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE8D4E97-B5B4-4248-9A07-4D7A057237D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE8D4E97-B5B4-4248-9A07-4D7A057237D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE1A2DDB-28C1-4B48-9281-A2738BCA5642}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE1A2DDB-28C1-4B48-9281-A2738BCA5642}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE1A2DDB-28C1-4B48-9281-A2738BCA5642}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE1A2DDB-28C1-4B48-9281-A2738BCA5642}.Release|Any CPU.Build.0 = Release|Any CPU
+		{644AEF35-8FEB-43DE-864B-0960B8973439}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{644AEF35-8FEB-43DE-864B-0960B8973439}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{644AEF35-8FEB-43DE-864B-0960B8973439}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{644AEF35-8FEB-43DE-864B-0960B8973439}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB926B6C-794B-444E-B886-A720F2C30E9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB926B6C-794B-444E-B886-A720F2C30E9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB926B6C-794B-444E-B886-A720F2C30E9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB926B6C-794B-444E-B886-A720F2C30E9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{25B438AB-7332-47B5-881C-E1038BAF328A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25B438AB-7332-47B5-881C-E1038BAF328A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25B438AB-7332-47B5-881C-E1038BAF328A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25B438AB-7332-47B5-881C-E1038BAF328A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3EFFD80D-9F87-45F5-AF37-90E2A98EC237}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EFFD80D-9F87-45F5-AF37-90E2A98EC237}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EFFD80D-9F87-45F5-AF37-90E2A98EC237}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EFFD80D-9F87-45F5-AF37-90E2A98EC237}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DEEAE17D-BF8D-434F-8F46-EAC1F4968510}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEEAE17D-BF8D-434F-8F46-EAC1F4968510}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEEAE17D-BF8D-434F-8F46-EAC1F4968510}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEEAE17D-BF8D-434F-8F46-EAC1F4968510}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E7A497F-6A8C-44B1-A572-D9BA42316281}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E7A497F-6A8C-44B1-A572-D9BA42316281}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E7A497F-6A8C-44B1-A572-D9BA42316281}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E7A497F-6A8C-44B1-A572-D9BA42316281}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6BBA401D-291E-4833-A8AC-E425E7128A5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BBA401D-291E-4833-A8AC-E425E7128A5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BBA401D-291E-4833-A8AC-E425E7128A5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BBA401D-291E-4833-A8AC-E425E7128A5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00998568-234D-478C-9E61-592E8EE35225}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00998568-234D-478C-9E61-592E8EE35225}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00998568-234D-478C-9E61-592E8EE35225}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00998568-234D-478C-9E61-592E8EE35225}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3EC879E2-1126-419F-AEA9-7845524D69A2} = {A9D4D09B-1837-41AA-A915-719F303B6D4A}
+		{EE8D4E97-B5B4-4248-9A07-4D7A057237D4} = {3EC879E2-1126-419F-AEA9-7845524D69A2}
+		{BE1A2DDB-28C1-4B48-9281-A2738BCA5642} = {3EC879E2-1126-419F-AEA9-7845524D69A2}
+		{644AEF35-8FEB-43DE-864B-0960B8973439} = {3EC879E2-1126-419F-AEA9-7845524D69A2}
+		{BB926B6C-794B-444E-B886-A720F2C30E9A} = {3EC879E2-1126-419F-AEA9-7845524D69A2}
+		{25B438AB-7332-47B5-881C-E1038BAF328A} = {7266C4A9-E384-DC00-0EB6-47F6002CFBA7}
+		{3EFFD80D-9F87-45F5-AF37-90E2A98EC237} = {7266C4A9-E384-DC00-0EB6-47F6002CFBA7}
+		{75CD12A9-ED6F-4281-E476-CEE2057EC95C} = {A9D4D09B-1837-41AA-A915-719F303B6D4A}
+		{DEEAE17D-BF8D-434F-8F46-EAC1F4968510} = {75CD12A9-ED6F-4281-E476-CEE2057EC95C}
+		{4E7A497F-6A8C-44B1-A572-D9BA42316281} = {75CD12A9-ED6F-4281-E476-CEE2057EC95C}
+		{6BBA401D-291E-4833-A8AC-E425E7128A5E} = {75CD12A9-ED6F-4281-E476-CEE2057EC95C}
+		{00998568-234D-478C-9E61-592E8EE35225} = {75CD12A9-ED6F-4281-E476-CEE2057EC95C}
+	EndGlobalSection
+EndGlobal
