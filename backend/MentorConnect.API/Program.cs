@@ -10,17 +10,7 @@ builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 builder.Services.RegisterModuleServices(builder.Configuration);
-
-var mvcBuilder = builder.Services.AddControllers();
-var assemblies = Directory.GetFiles(AppContext.BaseDirectory, "*.API.dll", SearchOption.AllDirectories)
-                          .Select(Assembly.LoadFrom)
-                          .ToList();
-
-foreach (var assembly in assemblies)
-{
-    mvcBuilder.PartManager.ApplicationParts.Add(new AssemblyPart(assembly));
-}
-
+builder.Services.AddModuleControllers();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -36,4 +26,4 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-app.Run();
+await app.RunAsync();
