@@ -8,7 +8,7 @@ const SessionList = ({ users, role }) => {
       <ul className="bg-gray-100 rounded-md overflow-hidden">
       
         {users.map((user, index) => (
-         <ToggleList user = {user} key={index+user.name} index ={index} role = {role}/>
+         <ToggleList user = {user} key={index+user.name} index ={index} role = {role} image = {user.image}/>
         ))}
       </ul>
     </div>

@@ -2,9 +2,11 @@ import { useState } from "react";
 import PropTypes from 'prop-types';
 import TaskList from "../TaskList";
 import { Dialog,DialogOverlay, DialogContent, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import { useSessionStore } from "@/store";
 
-const MilestoneList = ({ milestones, role }) => {
+const MilestoneList = ({ milestones, role,goalId }) => {
   const [selectedMilestone, setSelectedMilestone] = useState(null);
+  const { getMilestoneProgress } = useSessionStore();
 
   const openModal = (milestone) => {
     setSelectedMilestone(milestone);
@@ -19,13 +21,22 @@ const MilestoneList = ({ milestones, role }) => {
       <ul className="pl-5">
         {milestones.map((milestone, index) => (
        <li key={milestone.name + index} className="mb-2 shadow-lg">
-       <button 
-         className="w-full text-left px-4 py-3 rounded-lg shadow-sm hover:shadow-xl 
-         bg-white hover:bg-gray-50 transition-all duration-200 cursor-pointer"
-         onClick={() => openModal(milestone)}
-       >
-         {milestone.name}
-       </button>
+<button 
+  className="w-full text-left px-5 py-4 rounded-lg shadow-md hover:shadow-lg 
+  bg-gradient-to-r from-blue-100 to-blue-200 hover:from-blue-100 hover:to-blue-300 
+  transition-all duration-300 cursor-pointer transform hover:scale-105"
+  onClick={() => openModal(milestone)}
+>
+ <div className="flex items-center justify-between">
+ <span className="text-md font-semibold text-gray-800">{milestone.name}</span>
+ {(() => {
+                  const progress = getMilestoneProgress(goalId, milestone.name);
+                  return progress ? (
+                    <span className="font-bold text-teal-600"> {progress.progressPercentage}% completed</span>
+                  ) :  <span > not started</span>;
+                })()}
+ </div>
+</button>
      </li>
         ))}
       </ul>
@@ -60,6 +71,7 @@ MilestoneList.propTypes = {
     })
   ).isRequired,
   role: PropTypes.string.isRequired,
+  goalId: PropTypes.number.isRequired,
 };
 
 export default MilestoneList;
