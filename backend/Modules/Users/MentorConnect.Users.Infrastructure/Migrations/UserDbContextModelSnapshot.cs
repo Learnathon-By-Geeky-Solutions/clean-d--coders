@@ -32,7 +32,7 @@ namespace MentorConnect.Users.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Admin");
+                    b.ToTable("Admins");
                 });
 
             modelBuilder.Entity("MentorConnect.Users.Domain.Entities.Mentee", b =>
@@ -45,7 +45,7 @@ namespace MentorConnect.Users.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Mentee");
+                    b.ToTable("Mentees");
                 });
 
             modelBuilder.Entity("MentorConnect.Users.Domain.Entities.Mentor", b =>
@@ -58,7 +58,7 @@ namespace MentorConnect.Users.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Mentor");
+                    b.ToTable("Mentors");
                 });
 
             modelBuilder.Entity("MentorConnect.Users.Domain.Entities.User", b =>
@@ -91,44 +91,44 @@ namespace MentorConnect.Users.Infrastructure.Migrations
 
             modelBuilder.Entity("MentorConnect.Users.Domain.Entities.Admin", b =>
                 {
-                    b.HasOne("MentorConnect.Users.Domain.Entities.User", "BasicInfo")
-                        .WithOne("AdminInfo")
+                    b.HasOne("MentorConnect.Users.Domain.Entities.User", "User")
+                        .WithOne("Admin")
                         .HasForeignKey("MentorConnect.Users.Domain.Entities.Admin", "Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("BasicInfo");
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("MentorConnect.Users.Domain.Entities.Mentee", b =>
                 {
-                    b.HasOne("MentorConnect.Users.Domain.Entities.User", "BasicInfo")
-                        .WithOne("MenteeInfo")
+                    b.HasOne("MentorConnect.Users.Domain.Entities.User", "User")
+                        .WithOne("Mentee")
                         .HasForeignKey("MentorConnect.Users.Domain.Entities.Mentee", "Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("BasicInfo");
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("MentorConnect.Users.Domain.Entities.Mentor", b =>
                 {
-                    b.HasOne("MentorConnect.Users.Domain.Entities.User", "BasicInfo")
-                        .WithOne("MentorInfo")
+                    b.HasOne("MentorConnect.Users.Domain.Entities.User", "User")
+                        .WithOne("Mentor")
                         .HasForeignKey("MentorConnect.Users.Domain.Entities.Mentor", "Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("BasicInfo");
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("MentorConnect.Users.Domain.Entities.User", b =>
                 {
-                    b.Navigation("AdminInfo");
+                    b.Navigation("Admin");
 
-                    b.Navigation("MenteeInfo");
+                    b.Navigation("Mentee");
 
-                    b.Navigation("MentorInfo");
+                    b.Navigation("Mentor");
                 });
 #pragma warning restore 612, 618
         }

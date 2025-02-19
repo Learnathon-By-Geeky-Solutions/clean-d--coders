@@ -5,7 +5,7 @@
 namespace MentorConnect.Users.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class CascadeDelete : Migration
+    public partial class Init2 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
