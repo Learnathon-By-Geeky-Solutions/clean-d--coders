@@ -19,7 +19,7 @@ const SuccessStories = () => {
       >
         <CarouselContent>
           {stories.map((story, index) => (
-            <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+            <CarouselItem key={story.id} className="md:basis-1/2 lg:basis-1/3">
               <div className="p-1">
                 <Card className = 'shadow-lg'>
                   <CardContent className="flex flex-col aspect-video p-6">

@@ -41,6 +41,7 @@ ToggleList.propTypes = {
     user: PropTypes.object.isRequired,
     index: PropTypes.number.isRequired,
     role: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired
 };
 
 export default ToggleList;
