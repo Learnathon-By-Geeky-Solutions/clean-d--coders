@@ -24,7 +24,7 @@ const GoalList = ({ goals,role }) => {
                   }
                   aria-expanded={expandedIndex === index}
                 >
-                <div className="flex items-center">     <ChevronRight
+                <div className="flex items-center font-semibold text-gray-800">     <ChevronRight
                     className={`mr-2 h-4 w-4 transition-transform duration-300 ${
                       expandedIndex === index ? "rotate-90" : ""
                     }`}
@@ -53,7 +53,7 @@ const GoalList = ({ goals,role }) => {
                 </button>
                 {expandedIndex === index && (
                  <div className="pl-4 py-2 bg-white border-l-4 border-blue-200 shadow-md">
-                <MilestoneList milestones={goal.milestones} role={role}/>
+                <MilestoneList milestones={goal.milestones} role={role} goalId={goal.id}/>
                </div>
                 )}
               </li>
