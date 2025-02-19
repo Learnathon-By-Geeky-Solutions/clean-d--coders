@@ -5,5 +5,5 @@ namespace MentorConnect.Goals.Application.Contracts;
 
 public interface IGoalServices
 {
-    Task<List<Goal>> GetAllGoals();
+    Task<dynamic> GetAllGoals();
 }

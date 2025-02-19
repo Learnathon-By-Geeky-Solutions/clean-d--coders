@@ -1,14 +1,19 @@
 using System;
+using MediatR;
+using MentorConnect.BuildingBlocks.SharedKernel.Requests;
 using MentorConnect.Goals.Application.Contracts;
 using MentorConnect.Goals.Domain.Entities;
 
 namespace MentorConnect.Goals.Application.Services;
 
-public class GoalServices(IGoalRepository goalRepository) : IGoalServices
+public class GoalServices(IGoalRepository goalRepository, IMediator mediator) : IGoalServices
 {
     private readonly IGoalRepository _goalRepository = goalRepository;
-    public async Task<List<Goal>> GetAllGoals()
+    private readonly IMediator _mediator = mediator;
+    public async Task<dynamic> GetAllGoals()
     {
-        return await _goalRepository.GetAllGoalsAsync();
+        var goals = await _goalRepository.GetAllGoalsAsync();
+        var users = await _mediator.Send(new GetAllUsersQuery());
+        return new { Goals = goals, Users = users };
     }
 }
