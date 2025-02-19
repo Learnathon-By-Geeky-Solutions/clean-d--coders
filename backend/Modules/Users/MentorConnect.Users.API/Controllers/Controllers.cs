@@ -16,5 +16,10 @@ namespace MentorConnect.Users.API.Controllers
         {
             return await _userServices.GetAllUsers();
         }
+        [HttpGet("mentors")]
+        public async Task<ActionResult<List<Mentor>>> GetMentors()
+        {
+            return await _userServices.GetAllMentors();
+        }
     }
 }

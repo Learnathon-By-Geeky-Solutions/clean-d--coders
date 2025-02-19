@@ -10,7 +10,9 @@ public static class InfrastructureServiceExtensions
 {
     public static IServiceCollection AddInfrastructureServices(this IServiceCollection services, IConfiguration config)
     {
-
+        services.AddDbContext<UserDbContext>(options => options.UseNpgsql(config.GetConnectionString("MentorConnectDb"),
+        b => b.MigrationsAssembly(typeof(UserDbContext).Assembly.FullName)
+        ));
         services.AddScoped<IUserRepository, UserRepository>();
         return services;
     }

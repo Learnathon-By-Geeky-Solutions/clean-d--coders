@@ -12,4 +12,9 @@ public class UserServices(IUserRepository userRepository) : IUserServices
         var allUsers = await _userRepository.GetAllUsersAsync();
         return allUsers;
     }
+    public async Task<List<Mentor>> GetAllMentors()
+    {
+        var allMentors = await _userRepository.GetAllMentorsAsync();
+        return allMentors;
+    }
 }

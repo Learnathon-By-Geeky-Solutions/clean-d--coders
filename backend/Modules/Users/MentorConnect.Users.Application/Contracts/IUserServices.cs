@@ -6,4 +6,5 @@ namespace MentorConnect.Users.Application.Contracts;
 public interface IUserServices
 {
     Task<List<User>> GetAllUsers();
+    Task<List<Mentor>> GetAllMentors();
 }
