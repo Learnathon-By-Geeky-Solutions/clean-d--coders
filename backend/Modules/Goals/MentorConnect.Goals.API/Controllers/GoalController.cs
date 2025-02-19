@@ -11,8 +11,8 @@ public class GoalController(IGoalServices goalServices) : ControllerBase
     private readonly IGoalServices _goalServices = goalServices;
 
     [HttpGet]
-    public async Task<ActionResult<List<Goal>>> GetGoals()
+    public async Task<IActionResult> GetGoals()
     {
-        return await _goalServices.GetAllGoals();
+        return Ok(await _goalServices.GetAllGoals());
     }
 }

@@ -1,4 +1,6 @@
 using System;
+using System.Reflection;
+using MediatR;
 using MentorConnect.Users.Application.Contracts;
 using MentorConnect.Users.Application.Services;
 using Microsoft.Extensions.Configuration;
@@ -10,6 +12,7 @@ public static class ApplicationServicesExtensions
 {
     public static IServiceCollection AddApplicationServices(this IServiceCollection services, IConfiguration config)
     {
+        services.AddMediatR(Assembly.GetExecutingAssembly());
         services.AddScoped<IUserServices, UserServices>();
         return services;
     }
