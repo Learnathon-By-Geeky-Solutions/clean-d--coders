@@ -65,35 +65,7 @@ const useSessionStore = create((set, get) => ({
               }
             ]
           },
-          {
-            name: "Daniel Roberts",
-            image: "https://img.freepik.com/free-vector/male-avatar-profile-picture-vector-illustration_268834-538.jpg",
-            goals: [
-              {
-                id: 3,
-                name: "Become an Ethical Hacker",
-                milestones: [
-                  {
-                    name: "Milestone 1: Learn cybersecurity basics",
-                    tasks: [
-                      { name: "Study network security fundamentals", completed: true },
-                      { name: "Explore ethical hacking tools", completed: false },
-                      { name: "Set up a personal penetration testing lab", completed: false }
-                    ]
-                  },
-                  {
-                    name: "Milestone 2: Earn a security certification",
-                    tasks: [
-                      { name: "Prepare for CEH certification", completed: true },
-                      { name: "Complete security-related projects", completed: false },
-                      { name: "Contribute to open-source security tools", completed: false },
-                      { name: "Apply for cybersecurity roles", completed: false }
-                    ]
-                  }
-                ]
-              }
-            ]
-          }
+  
         ],
         mentee: [
           {
@@ -153,37 +125,8 @@ const useSessionStore = create((set, get) => ({
                 ]
               }
             ]
-          },
-          {
-            name: "Lily Adams",
-            image: "https://img.freepik.com/free-vector/businesswoman-character-avatar_24877-60111.jpg",
-            goals: [
-              {
-                id: 6,
-                name: "Become a JavaScript Developer",
-                milestones: [
-                  {
-                    name: "Milestone 1: Learn JavaScript fundamentals",
-                    tasks: [
-                      { name: "Master variables and functions", completed: false },
-                      { name: "Understand DOM manipulation", completed: false },
-                      { name: "Work with ES6+ features", completed: false }
-                    ]
-                  },
-                  {
-                    name: "Milestone 2: Build a dynamic web application",
-                    tasks: [
-                      { name: "Design app architecture", completed: false },
-                      { name: "Develop core application features", completed: false },
-                      { name: "Implement authentication and authorization", completed: false },
-                      { name: "Deploy the web app online", completed: false },
-                      { name: "Gather user feedback for improvements", completed: false }
-                    ]
-                  }
-                ]
-              }
-            ]
           }
+
         ]
       }
       

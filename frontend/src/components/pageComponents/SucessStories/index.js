@@ -1,1 +1,1 @@
-export {default as SucessStories} from './SucessStories';
+export {default as SucessStories} from './SucessStory';
