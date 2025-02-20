@@ -18,18 +18,21 @@ public class UserDbContext(DbContextOptions<UserDbContext> options) : DbContext(
         modelBuilder.Entity<Admin>()
             .HasOne(a => a.User)
             .WithOne(u => u.Admin)
+            .HasForeignKey<Admin>(a => a.Id)
             .OnDelete(DeleteBehavior.Cascade);
 
         // User - Mentor (One-to-One)
         modelBuilder.Entity<Mentor>()
             .HasOne(m => m.User)
             .WithOne(u => u.Mentor)
+            .HasForeignKey<Mentor>(m => m.Id)
             .OnDelete(DeleteBehavior.Cascade);
 
         // User - Mentee (One-to-One)
         modelBuilder.Entity<Mentee>()
             .HasOne(m => m.User)
             .WithOne(u => u.Mentee)
+            .HasForeignKey<Mentee>(m => m.Id)
             .OnDelete(DeleteBehavior.Cascade);
     }
 }
