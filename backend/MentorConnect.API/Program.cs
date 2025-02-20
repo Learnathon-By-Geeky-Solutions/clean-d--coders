@@ -6,8 +6,11 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddControllers();
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
+builder.Services.AddControllers().AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.IgnoreCycles; // Ignore circular references globally
+    });
+
 builder.Services.AddOpenApi();
 builder.Services.RegisterModuleServices(builder.Configuration);
 builder.Services.AddModuleControllers();

@@ -441,6 +441,25 @@
       "Microsoft.EntityFrameworkCore.Analyzers/9.0.2": {
         "type": "package"
       },
+      "Microsoft.EntityFrameworkCore.Relational/9.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "9.0.2",
+          "Microsoft.Extensions.Caching.Memory": "9.0.2",
+          "Microsoft.Extensions.Configuration.Abstractions": "9.0.2",
+          "Microsoft.Extensions.Logging": "9.0.2"
+        },
+        "compile": {
+          "lib/net8.0/Microsoft.EntityFrameworkCore.Relational.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.EntityFrameworkCore.Relational.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.Extensions.Caching.Abstractions/9.0.2": {
         "type": "package",
         "dependencies": {
@@ -805,6 +824,40 @@
         },
         "runtime": {
           "lib/netstandard1.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Npgsql/9.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Logging.Abstractions": "8.0.2"
+        },
+        "compile": {
+          "lib/net8.0/Npgsql.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Npgsql.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Npgsql.EntityFrameworkCore.PostgreSQL/9.0.3": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "[9.0.1, 10.0.0)",
+          "Microsoft.EntityFrameworkCore.Relational": "[9.0.1, 10.0.0)",
+          "Npgsql": "9.0.2"
+        },
+        "compile": {
+          "lib/net8.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll": {
             "related": ".xml"
           }
         }
@@ -1458,6 +1511,9 @@
       "MentorConnect.BuildingBlocks.SharedKernel/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "MediatR.Extensions.Microsoft.DependencyInjection": "11.1.0"
+        },
         "compile": {
           "bin/placeholder/MentorConnect.BuildingBlocks.SharedKernel.dll": {}
         },
@@ -1486,6 +1542,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
         "dependencies": {
+          "MediatR.Extensions.Microsoft.DependencyInjection": "11.1.0",
           "MentorConnect.Goals.Domain": "1.0.0",
           "Microsoft.Extensions.Configuration": "9.0.2",
           "Microsoft.Extensions.DependencyInjection": "9.0.2"
@@ -1546,6 +1603,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
         "dependencies": {
+          "MediatR.Extensions.Microsoft.DependencyInjection": "11.1.0",
           "MentorConnect.Users.Domain": "1.0.0",
           "Microsoft.Extensions.Configuration": "9.0.2",
           "Microsoft.Extensions.DependencyInjection": "9.0.2"
@@ -1576,8 +1634,11 @@
         "dependencies": {
           "MentorConnect.BuildingBlocks.Infrastructure": "1.0.0",
           "MentorConnect.Users.Application": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "9.0.2",
+          "Microsoft.EntityFrameworkCore.Relational": "9.0.2",
           "Microsoft.Extensions.Configuration": "9.0.2",
-          "Microsoft.Extensions.DependencyInjection": "9.0.2"
+          "Microsoft.Extensions.DependencyInjection": "9.0.2",
+          "Npgsql.EntityFrameworkCore.PostgreSQL": "9.0.3"
         },
         "compile": {
           "bin/placeholder/MentorConnect.Users.Infrastructure.dll": {}
@@ -1973,6 +2034,21 @@
         "docs/PACKAGE.md",
         "microsoft.entityframeworkcore.analyzers.9.0.2.nupkg.sha512",
         "microsoft.entityframeworkcore.analyzers.nuspec"
+      ]
+    },
+    "Microsoft.EntityFrameworkCore.Relational/9.0.2": {
+      "sha512": "r7O4N5uaM95InVSGUj7SMOQWN0f1PBF2Y30ow7Jg+pGX5GJCRVd/1fq83lQ50YMyq+EzyHac5o4CDQA2RsjKJQ==",
+      "type": "package",
+      "path": "microsoft.entityframeworkcore.relational/9.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "PACKAGE.md",
+        "lib/net8.0/Microsoft.EntityFrameworkCore.Relational.dll",
+        "lib/net8.0/Microsoft.EntityFrameworkCore.Relational.xml",
+        "microsoft.entityframeworkcore.relational.9.0.2.nupkg.sha512",
+        "microsoft.entityframeworkcore.relational.nuspec"
       ]
     },
     "Microsoft.Extensions.Caching.Abstractions/9.0.2": {
@@ -2528,6 +2604,38 @@
         "newtonsoft.json.9.0.1.nupkg.sha512",
         "newtonsoft.json.nuspec",
         "tools/install.ps1"
+      ]
+    },
+    "Npgsql/9.0.2": {
+      "sha512": "hCbO8box7i/XXiTFqCJ3GoowyLqx3JXxyrbOJ6om7dr+eAknvBNhhUHeJVGAQo44sySZTfdVffp4BrtPeLZOAA==",
+      "type": "package",
+      "path": "npgsql/9.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "lib/net6.0/Npgsql.dll",
+        "lib/net6.0/Npgsql.xml",
+        "lib/net8.0/Npgsql.dll",
+        "lib/net8.0/Npgsql.xml",
+        "npgsql.9.0.2.nupkg.sha512",
+        "npgsql.nuspec",
+        "postgresql.png"
+      ]
+    },
+    "Npgsql.EntityFrameworkCore.PostgreSQL/9.0.3": {
+      "sha512": "1A6HpMPbzK+quxdtug1aDHI4BSRTgpi7OaDt8WQh7SFJd2sSQ0nNTZ7sYrwyxVf4AdKdN7XJL9tpiiJjRUaa4g==",
+      "type": "package",
+      "path": "npgsql.entityframeworkcore.postgresql/9.0.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "lib/net8.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll",
+        "lib/net8.0/Npgsql.EntityFrameworkCore.PostgreSQL.xml",
+        "npgsql.entityframeworkcore.postgresql.9.0.3.nupkg.sha512",
+        "npgsql.entityframeworkcore.postgresql.nuspec",
+        "postgresql.png"
       ]
     },
     "runtime.native.System/4.0.0": {
@@ -4808,24 +4916,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\akbor hossain\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\DigitaL OutleT\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\projects\\clean-d--coders\\backend\\MentorConnect.API\\MentorConnect.API.csproj",
+      "projectUniqueName": "G:\\clean-d--coders\\backend\\MentorConnect.API\\MentorConnect.API.csproj",
       "projectName": "MentorConnect.API",
-      "projectPath": "D:\\projects\\clean-d--coders\\backend\\MentorConnect.API\\MentorConnect.API.csproj",
-      "packagesPath": "C:\\Users\\akbor hossain\\.nuget\\packages\\",
-      "outputPath": "D:\\projects\\clean-d--coders\\backend\\MentorConnect.API\\obj\\",
+      "projectPath": "G:\\clean-d--coders\\backend\\MentorConnect.API\\MentorConnect.API.csproj",
+      "packagesPath": "C:\\Users\\DigitaL OutleT\\.nuget\\packages\\",
+      "outputPath": "G:\\clean-d--coders\\backend\\MentorConnect.API\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\akbor hossain\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config"
+        "C:\\Users\\DigitaL OutleT\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net9.0"
@@ -4837,11 +4940,11 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "D:\\projects\\clean-d--coders\\backend\\Modules\\Goals\\MentorConnect.Goals.API\\MentorConnect.Goals.API.csproj": {
-              "projectPath": "D:\\projects\\clean-d--coders\\backend\\Modules\\Goals\\MentorConnect.Goals.API\\MentorConnect.Goals.API.csproj"
+            "G:\\clean-d--coders\\backend\\Modules\\Goals\\MentorConnect.Goals.API\\MentorConnect.Goals.API.csproj": {
+              "projectPath": "G:\\clean-d--coders\\backend\\Modules\\Goals\\MentorConnect.Goals.API\\MentorConnect.Goals.API.csproj"
             },
-            "D:\\projects\\clean-d--coders\\backend\\Modules\\Users\\MentorConnect.Users.API\\MentorConnect.Users.API.csproj": {
-              "projectPath": "D:\\projects\\clean-d--coders\\backend\\Modules\\Users\\MentorConnect.Users.API\\MentorConnect.Users.API.csproj"
+            "G:\\clean-d--coders\\backend\\Modules\\Users\\MentorConnect.Users.API\\MentorConnect.Users.API.csproj": {
+              "projectPath": "G:\\clean-d--coders\\backend\\Modules\\Users\\MentorConnect.Users.API\\MentorConnect.Users.API.csproj"
             }
           }
         }
@@ -4856,7 +4959,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.100"
+      "SdkAnalysisLevel": "9.0.200"
     },
     "frameworks": {
       "net9.0": {
@@ -4898,7 +5001,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
