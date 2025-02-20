@@ -1,6 +1,8 @@
 using System;
 using MentorConnect.Users.Application.Contracts;
+using MentorConnect.Users.Infrastructure.Data;
 using MentorConnect.Users.Infrastructure.Repositories;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
