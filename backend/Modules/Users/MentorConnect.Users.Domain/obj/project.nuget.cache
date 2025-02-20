@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "2yKBVIDI2RE=",
+  "dgSpecHash": "lZfNCyZL5ag=",
   "success": true,
-  "projectFilePath": "D:\\projects\\clean-d--coders\\backend\\Modules\\Users\\MentorConnect.Users.Domain\\MentorConnect.Users.Domain.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "G:\\clean-d--coders\\backend\\Modules\\Users\\MentorConnect.Users.Domain\\MentorConnect.Users.Domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\DigitaL OutleT\\.nuget\\packages\\mediatr\\11.0.0\\mediatr.11.0.0.nupkg.sha512",
+    "C:\\Users\\DigitaL OutleT\\.nuget\\packages\\mediatr.contracts\\1.0.1\\mediatr.contracts.1.0.1.nupkg.sha512",
+    "C:\\Users\\DigitaL OutleT\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\11.1.0\\mediatr.extensions.microsoft.dependencyinjection.11.1.0.nupkg.sha512",
+    "C:\\Users\\DigitaL OutleT\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\7.0.0\\microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512"
+  ],
   "logs": []
 }
