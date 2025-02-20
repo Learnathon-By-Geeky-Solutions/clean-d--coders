@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MentorConnect.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3e852c4de540eb1f249b7e542b70bb4ff045b3bf")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c02ac33f685ddff9bf3a20cae7a5d8be4ab48266")]
 [assembly: System.Reflection.AssemblyProductAttribute("MentorConnect.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MentorConnect.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1397,16 +1397,6 @@
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
       },
-      "MentorConnect.BuildingBlocks.Infrastructure/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v9.0",
-        "compile": {
-          "bin/placeholder/MentorConnect.BuildingBlocks.Infrastructure.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/MentorConnect.BuildingBlocks.Infrastructure.dll": {}
-        }
-      },
       "MentorConnect.BuildingBlocks.SharedKernel/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
@@ -1453,7 +1443,6 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
         "dependencies": {
-          "MentorConnect.BuildingBlocks.Infrastructure": "1.0.0",
           "MentorConnect.Goals.Application": "1.0.0",
           "Microsoft.EntityFrameworkCore": "9.0.2",
           "Microsoft.Extensions.Configuration": "9.0.2",
@@ -4577,11 +4566,6 @@
         "system.xml.xdocument.4.0.11.nupkg.sha512",
         "system.xml.xdocument.nuspec"
       ]
-    },
-    "MentorConnect.BuildingBlocks.Infrastructure/1.0.0": {
-      "type": "project",
-      "path": "../../../BuildingBlocks/MentorConnect.BuildingBlocks.Infrastructure/MentorConnect.BuildingBlocks.Infrastructure.csproj",
-      "msbuildProject": "../../../BuildingBlocks/MentorConnect.BuildingBlocks.Infrastructure/MentorConnect.BuildingBlocks.Infrastructure.csproj"
     },
     "MentorConnect.BuildingBlocks.SharedKernel/1.0.0": {
       "type": "project",

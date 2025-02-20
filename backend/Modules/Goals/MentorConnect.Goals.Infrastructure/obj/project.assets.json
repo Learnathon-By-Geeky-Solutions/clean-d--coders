@@ -946,16 +946,6 @@
           "buildTransitive/net6.0/_._": {}
         }
       },
-      "MentorConnect.BuildingBlocks.Infrastructure/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v9.0",
-        "compile": {
-          "bin/placeholder/MentorConnect.BuildingBlocks.Infrastructure.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/MentorConnect.BuildingBlocks.Infrastructure.dll": {}
-        }
-      },
       "MentorConnect.BuildingBlocks.SharedKernel/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
@@ -2924,11 +2914,6 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "MentorConnect.BuildingBlocks.Infrastructure/1.0.0": {
-      "type": "project",
-      "path": "../../../BuildingBlocks/MentorConnect.BuildingBlocks.Infrastructure/MentorConnect.BuildingBlocks.Infrastructure.csproj",
-      "msbuildProject": "../../../BuildingBlocks/MentorConnect.BuildingBlocks.Infrastructure/MentorConnect.BuildingBlocks.Infrastructure.csproj"
-    },
     "MentorConnect.BuildingBlocks.SharedKernel/1.0.0": {
       "type": "project",
       "path": "../../../BuildingBlocks/MentorConnect.BuildingBlocks.SharedKernel/MentorConnect.BuildingBlocks.SharedKernel.csproj",
@@ -2947,7 +2932,6 @@
   },
   "projectFileDependencyGroups": {
     "net9.0": [
-      "MentorConnect.BuildingBlocks.Infrastructure >= 1.0.0",
       "MentorConnect.Goals.Application >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 9.0.2",
       "Microsoft.EntityFrameworkCore.Tools >= 9.0.2",
@@ -2980,9 +2964,6 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "G:\\clean-d--coders\\backend\\BuildingBlocks\\MentorConnect.BuildingBlocks.Infrastructure\\MentorConnect.BuildingBlocks.Infrastructure.csproj": {
-              "projectPath": "G:\\clean-d--coders\\backend\\BuildingBlocks\\MentorConnect.BuildingBlocks.Infrastructure\\MentorConnect.BuildingBlocks.Infrastructure.csproj"
-            },
             "G:\\clean-d--coders\\backend\\Modules\\Goals\\MentorConnect.Goals.Application\\MentorConnect.Goals.Application.csproj": {
               "projectPath": "G:\\clean-d--coders\\backend\\Modules\\Goals\\MentorConnect.Goals.Application\\MentorConnect.Goals.Application.csproj"
             }
