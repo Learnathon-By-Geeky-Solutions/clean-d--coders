@@ -10,10 +10,11 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("a3f6dc56-3581-42d0-833f-7b5ca9b36146")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("MentorConnect.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4de9892deac427e911bd440f560273ce05b25f98")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3e852c4de540eb1f249b7e542b70bb4ff045b3bf")]
 [assembly: System.Reflection.AssemblyProductAttribute("MentorConnect.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MentorConnect.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
