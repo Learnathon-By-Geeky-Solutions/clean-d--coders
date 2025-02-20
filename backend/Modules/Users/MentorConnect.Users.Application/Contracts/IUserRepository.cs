@@ -6,4 +6,5 @@ namespace MentorConnect.Users.Application.Contracts;
 public interface IUserRepository
 {
     Task<List<User>> GetAllUsersAsync();
+    Task<List<Mentor>> GetAllMentorsAsync();
 }
