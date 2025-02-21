@@ -13,29 +13,29 @@ namespace MentorConnect.Users.API.Controllers
     {
         private readonly IUserServices _userServices = userServices;
         [HttpGet]
-        public async Task<ActionResult<List<User>>> GetUsers()
+        public async Task<ActionResult<List<GetUserDto>>> GetUsers()
         {
             return await _userServices.GetAllUsers();
         }
         [HttpGet("mentors")]
-        public async Task<ActionResult<List<Mentor>>> GetMentors()
+        public async Task<ActionResult<List<GetMentorDto>>> GetMentors()
         {
             return await _userServices.GetAllMentors();
         }
         [HttpGet("admins")]
-        public async Task<ActionResult<List<Admin>>> GetAdmins()
+        public async Task<ActionResult<List<GetAdminDto>>> GetAdmins()
         {
             return await _userServices.GetAllAdmins();
         }
         [HttpGet("mentees")]
-        public async Task<ActionResult<List<Mentee>>> GetMentees()
+        public async Task<ActionResult<List<GetMenteeDto>>> GetMentees()
         {
             return await _userServices.GetAllMentees();
         }
         [HttpGet("{id}")]
-        public async Task<ActionResult<User>> GetUserById([FromRoute] Guid id)
+        public async Task<ActionResult<GetUserDto>> GetUserById([FromRoute] Guid id)
         {
-            User? user = await _userServices.GetUserById(id);
+            GetUserDto? user = await _userServices.GetUserById(id);
             if (user == null)
             {
                 return NotFound();
@@ -43,19 +43,19 @@ namespace MentorConnect.Users.API.Controllers
             return user;
         }
         [HttpPost]
-        public async Task<ActionResult<User>> AddUser([FromBody] CreateUserDto user)
+        public async Task<ActionResult<GetUserDto>> AddUser([FromBody] CreateUserDto user)
         {
             var result = await _userServices.AddUser(user);
             return result;
         }
         [HttpPost("admins")]
-        public async Task<ActionResult<Admin>> AddAdmin([FromBody] CreateAdminDto admin)
+        public async Task<ActionResult<GetAdminDto>> AddAdmin([FromBody] CreateAdminDto admin)
         {
             var result = await _userServices.AddAdmin(admin);
             return result;
         }
         [HttpPut("{id}")]
-        public async Task<ActionResult<User>> UpdateUser([FromRoute] Guid id, [FromBody] User user)
+        public async Task<ActionResult> UpdateUser([FromRoute] Guid id, [FromBody] UpdateUserDto user)
         {
             if (id != user.Id)
             {

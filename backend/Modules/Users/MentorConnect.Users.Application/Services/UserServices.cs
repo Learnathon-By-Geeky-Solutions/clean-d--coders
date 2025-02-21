@@ -11,50 +11,99 @@ public class UserServices(IUserRepository userRepository, IMapper mapper) : IUse
 {
     private readonly IUserRepository _userRepository = userRepository;
     private readonly IMapper _mapper = mapper;
-    public async Task<List<User>> GetAllUsers()
+    public async Task<List<GetUserDto>> GetAllUsers()
     {
         var allUsers = await _userRepository.GetAllUsersAsync();
-        return allUsers;
+        var result = _mapper.Map<List<GetUserDto>>(allUsers);
+        foreach (var user in result)
+        {
+            if (user.Admin != null)
+            {
+                user.Roles.Add("admin");
+                continue;
+            }
+            user.Roles = ["user"];
+            if (user.Mentor != null)
+                user.Roles.Add("mentor");
+            if (user.Mentee != null)
+                user.Roles.Add("mentee");
+        }
+        return result;
     }
-    public async Task<List<Mentor>> GetAllMentors()
+    public async Task<List<GetMentorDto>> GetAllMentors()
     {
         var allMentors = await _userRepository.GetAllMentorsAsync();
-        return allMentors;
+        var result = _mapper.Map<List<GetMentorDto>>(allMentors);
+        return result;
     }
 
-    public async Task<List<Mentee>> GetAllMentees()
+    public async Task<List<GetMenteeDto>> GetAllMentees()
     {
         var allMentees = await _userRepository.GetAllMenteesAsync();
-        return allMentees;
+        var result = _mapper.Map<List<GetMenteeDto>>(allMentees);
+        return result;
     }
 
-    public async Task<List<Admin>> GetAllAdmins()
+    public async Task<List<GetAdminDto>> GetAllAdmins()
     {
         var allAdmins = await _userRepository.GetAllAdminsAsync();
-        return allAdmins;
+        var result = _mapper.Map<List<GetAdminDto>>(allAdmins);
+        return result;
     }
 
-    public async Task<User?> GetUserById(Guid id)
+    public async Task<GetUserDto?> GetUserById(Guid id)
     {
-        return await _userRepository.GetByIdAsync(id);
+        var result = _mapper.Map<GetUserDto?>(await _userRepository.GetByIdAsync(id));
+        return result;
     }
 
-    public async Task<User> AddUser(CreateUserDto userInfo)
+    public async Task<GetUserDto> AddUser(CreateUserDto userInfo)
     {
         var user = _mapper.Map<User>(userInfo);
         user.CreateTime();
         await _userRepository.AddUserAsync(user);
-        return user;
+        var result = _mapper.Map<GetUserDto>(user);
+        if (result.Admin != null)
+        {
+            result.Roles.Add("admin");
+        }
+        else
+        {
+            result.Roles = ["user"];
+            if (result.Mentor != null)
+                result.Roles.Add("mentor");
+            if (result.Mentee != null)
+                result.Roles.Add("mentee");
+        }
+        return result;
     }
-    public async Task<Admin> AddAdmin(CreateAdminDto adminInfo)
+    public async Task<GetAdminDto> AddAdmin(CreateAdminDto adminInfo)
     {
         var admin = _mapper.Map<Admin>(adminInfo);
         admin.CreateTime();
         await _userRepository.AddAdminAsync(admin);
-        return admin;
+        var result = _mapper.Map<GetAdminDto>(admin);
+        return result;
     }
-    public async Task UpdateUser(User user)
+    public async Task<GetMentorDto> AddMentor(CreateMentorDto mentorInfo)
     {
+        var mentor = _mapper.Map<Admin>(mentorInfo);
+        mentor.CreateTime();
+        await _userRepository.AddAdminAsync(mentor);
+        var result = _mapper.Map<GetMentorDto>(mentor);
+        return result;
+    }
+    public async Task<GetMenteeDto> AddMentee(CreateMenteeDto menteeInfo)
+    {
+        var mentee = _mapper.Map<Admin>(menteeInfo);
+        mentee.CreateTime();
+        await _userRepository.AddAdminAsync(mentee);
+        var result = _mapper.Map<GetMenteeDto>(mentee);
+        return result;
+    }
+    public async Task UpdateUser(UpdateUserDto userInfo)
+    {
+        var user = _mapper.Map<User>(userInfo);
         user.UpdateTime();
         await _userRepository.UpdateAsync(user);
     }
@@ -63,4 +112,5 @@ public class UserServices(IUserRepository userRepository, IMapper mapper) : IUse
     {
         await _userRepository.DeleteAsync(id);
     }
+
 }
