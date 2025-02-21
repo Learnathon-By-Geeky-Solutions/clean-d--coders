@@ -1401,7 +1401,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
         "dependencies": {
-          "MediatR.Extensions.Microsoft.DependencyInjection": "11.1.0"
+          "MediatR.Extensions.Microsoft.DependencyInjection": "11.1.0",
+          "Microsoft.EntityFrameworkCore": "9.0.2"
         },
         "compile": {
           "bin/placeholder/MentorConnect.BuildingBlocks.SharedKernel.dll": {}

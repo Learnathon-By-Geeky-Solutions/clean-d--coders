@@ -1,4 +1,5 @@
 using System;
+using MentorConnect.BuildingBlocks.SharedKernel.Extensions;
 using MentorConnect.Users.Application.Contracts;
 using MentorConnect.Users.Domain.Entities;
 using MentorConnect.Users.Infrastructure.Data;
@@ -64,7 +65,9 @@ public class UserRepository(UserDbContext userDbContext) : IUserRepository
 
     public async Task UpdateAsync(User user)
     {
-        _userDbContext.Users.Update(user);
+        var userData = await _userDbContext.Users.FindAsync(user.Id);
+        if (userData != null)
+            _userDbContext.ApplyPatch(userData, user);
         await _userDbContext.SaveChangesAsync();
     }
 
