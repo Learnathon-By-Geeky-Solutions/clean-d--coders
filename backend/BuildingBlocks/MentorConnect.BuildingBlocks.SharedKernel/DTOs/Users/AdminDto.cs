@@ -2,7 +2,7 @@ using System;
 
 namespace MentorConnect.BuildingBlocks.SharedKernel.DTOs.Users;
 
-public class CreateAdminDto
+public class CreateUpdateAdminDto
 {
     public Guid Id { get; set; }
     public string? Extra { get; set; }

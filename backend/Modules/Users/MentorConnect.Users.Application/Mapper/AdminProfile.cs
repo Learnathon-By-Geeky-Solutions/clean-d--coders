@@ -12,6 +12,6 @@ public class AdminProfile : Profile
         CreateMap<Admin, GetAdminDto>()
             .ForMember(dest => dest.User, opt => opt.MapFrom(src => src.User));
         CreateMap<Admin, AdminDto>();
-        CreateMap<CreateAdminDto, Admin>();
+        CreateMap<CreateUpdateAdminDto, Admin>();
     }
 }
