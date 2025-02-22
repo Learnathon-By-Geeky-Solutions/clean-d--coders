@@ -1,4 +1,4 @@
-.env*
-node_modules
-.qodo
-.vscode
+**/.env*
+**/node_modules/
+**/.qodo/
+**/.vscode/
