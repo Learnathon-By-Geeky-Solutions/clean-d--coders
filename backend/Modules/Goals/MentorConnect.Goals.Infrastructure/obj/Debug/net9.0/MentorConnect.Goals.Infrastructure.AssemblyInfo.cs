@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MentorConnect.Goals.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8a0fd75616e1ddd17cc5e2dc80c8883c7f964b0a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+166e721a1a32cd11d1b5fc057001ea9875659272")]
 [assembly: System.Reflection.AssemblyProductAttribute("MentorConnect.Goals.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MentorConnect.Goals.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

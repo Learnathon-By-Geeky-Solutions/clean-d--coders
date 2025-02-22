@@ -2956,19 +2956,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\DigitaL OutleT\\.nuget\\packages\\": {}
+    "C:\\Users\\akbor hossain\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\clean-d--coders\\backend\\Modules\\Goals\\MentorConnect.Goals.Infrastructure\\MentorConnect.Goals.Infrastructure.csproj",
+      "projectUniqueName": "D:\\projects\\clean-d--coders\\backend\\Modules\\Goals\\MentorConnect.Goals.Infrastructure\\MentorConnect.Goals.Infrastructure.csproj",
       "projectName": "MentorConnect.Goals.Infrastructure",
-      "projectPath": "G:\\clean-d--coders\\backend\\Modules\\Goals\\MentorConnect.Goals.Infrastructure\\MentorConnect.Goals.Infrastructure.csproj",
-      "packagesPath": "C:\\Users\\DigitaL OutleT\\.nuget\\packages\\",
-      "outputPath": "G:\\clean-d--coders\\backend\\Modules\\Goals\\MentorConnect.Goals.Infrastructure\\obj\\",
+      "projectPath": "D:\\projects\\clean-d--coders\\backend\\Modules\\Goals\\MentorConnect.Goals.Infrastructure\\MentorConnect.Goals.Infrastructure.csproj",
+      "packagesPath": "C:\\Users\\akbor hossain\\.nuget\\packages\\",
+      "outputPath": "D:\\projects\\clean-d--coders\\backend\\Modules\\Goals\\MentorConnect.Goals.Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\DigitaL OutleT\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\akbor hossain\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config"
       ],
       "originalTargetFrameworks": [
         "net9.0"
@@ -2980,11 +2985,11 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "G:\\clean-d--coders\\backend\\BuildingBlocks\\MentorConnect.BuildingBlocks.Infrastructure\\MentorConnect.BuildingBlocks.Infrastructure.csproj": {
-              "projectPath": "G:\\clean-d--coders\\backend\\BuildingBlocks\\MentorConnect.BuildingBlocks.Infrastructure\\MentorConnect.BuildingBlocks.Infrastructure.csproj"
+            "D:\\projects\\clean-d--coders\\backend\\BuildingBlocks\\MentorConnect.BuildingBlocks.Infrastructure\\MentorConnect.BuildingBlocks.Infrastructure.csproj": {
+              "projectPath": "D:\\projects\\clean-d--coders\\backend\\BuildingBlocks\\MentorConnect.BuildingBlocks.Infrastructure\\MentorConnect.BuildingBlocks.Infrastructure.csproj"
             },
-            "G:\\clean-d--coders\\backend\\Modules\\Goals\\MentorConnect.Goals.Application\\MentorConnect.Goals.Application.csproj": {
-              "projectPath": "G:\\clean-d--coders\\backend\\Modules\\Goals\\MentorConnect.Goals.Application\\MentorConnect.Goals.Application.csproj"
+            "D:\\projects\\clean-d--coders\\backend\\Modules\\Goals\\MentorConnect.Goals.Application\\MentorConnect.Goals.Application.csproj": {
+              "projectPath": "D:\\projects\\clean-d--coders\\backend\\Modules\\Goals\\MentorConnect.Goals.Application\\MentorConnect.Goals.Application.csproj"
             }
           }
         }
@@ -2999,7 +3004,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.200"
+      "SdkAnalysisLevel": "9.0.100"
     },
     "frameworks": {
       "net9.0": {
@@ -3040,7 +3045,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

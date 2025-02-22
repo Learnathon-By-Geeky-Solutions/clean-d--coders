@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "G:\\clean-d--coders\\backend\\Modules\\Goals\\MentorConnect.Goals.Application\\MentorConnect.Goals.Application.csproj": {}
+    "D:\\projects\\clean-d--coders\\backend\\Modules\\Goals\\MentorConnect.Goals.Application\\MentorConnect.Goals.Application.csproj": {}
   },
   "projects": {
-    "G:\\clean-d--coders\\backend\\BuildingBlocks\\MentorConnect.BuildingBlocks.SharedKernel\\MentorConnect.BuildingBlocks.SharedKernel.csproj": {
+    "D:\\projects\\clean-d--coders\\backend\\BuildingBlocks\\MentorConnect.BuildingBlocks.SharedKernel\\MentorConnect.BuildingBlocks.SharedKernel.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\clean-d--coders\\backend\\BuildingBlocks\\MentorConnect.BuildingBlocks.SharedKernel\\MentorConnect.BuildingBlocks.SharedKernel.csproj",
+        "projectUniqueName": "D:\\projects\\clean-d--coders\\backend\\BuildingBlocks\\MentorConnect.BuildingBlocks.SharedKernel\\MentorConnect.BuildingBlocks.SharedKernel.csproj",
         "projectName": "MentorConnect.BuildingBlocks.SharedKernel",
-        "projectPath": "G:\\clean-d--coders\\backend\\BuildingBlocks\\MentorConnect.BuildingBlocks.SharedKernel\\MentorConnect.BuildingBlocks.SharedKernel.csproj",
-        "packagesPath": "C:\\Users\\DigitaL OutleT\\.nuget\\packages\\",
-        "outputPath": "G:\\clean-d--coders\\backend\\BuildingBlocks\\MentorConnect.BuildingBlocks.SharedKernel\\obj\\",
+        "projectPath": "D:\\projects\\clean-d--coders\\backend\\BuildingBlocks\\MentorConnect.BuildingBlocks.SharedKernel\\MentorConnect.BuildingBlocks.SharedKernel.csproj",
+        "packagesPath": "C:\\Users\\akbor hossain\\.nuget\\packages\\",
+        "outputPath": "D:\\projects\\clean-d--coders\\backend\\BuildingBlocks\\MentorConnect.BuildingBlocks.SharedKernel\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\DigitaL OutleT\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\akbor hossain\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
@@ -38,7 +42,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.200"
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net9.0": {
@@ -65,21 +69,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "G:\\clean-d--coders\\backend\\Modules\\Goals\\MentorConnect.Goals.Application\\MentorConnect.Goals.Application.csproj": {
+    "D:\\projects\\clean-d--coders\\backend\\Modules\\Goals\\MentorConnect.Goals.Application\\MentorConnect.Goals.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\clean-d--coders\\backend\\Modules\\Goals\\MentorConnect.Goals.Application\\MentorConnect.Goals.Application.csproj",
+        "projectUniqueName": "D:\\projects\\clean-d--coders\\backend\\Modules\\Goals\\MentorConnect.Goals.Application\\MentorConnect.Goals.Application.csproj",
         "projectName": "MentorConnect.Goals.Application",
-        "projectPath": "G:\\clean-d--coders\\backend\\Modules\\Goals\\MentorConnect.Goals.Application\\MentorConnect.Goals.Application.csproj",
-        "packagesPath": "C:\\Users\\DigitaL OutleT\\.nuget\\packages\\",
-        "outputPath": "G:\\clean-d--coders\\backend\\Modules\\Goals\\MentorConnect.Goals.Application\\obj\\",
+        "projectPath": "D:\\projects\\clean-d--coders\\backend\\Modules\\Goals\\MentorConnect.Goals.Application\\MentorConnect.Goals.Application.csproj",
+        "packagesPath": "C:\\Users\\akbor hossain\\.nuget\\packages\\",
+        "outputPath": "D:\\projects\\clean-d--coders\\backend\\Modules\\Goals\\MentorConnect.Goals.Application\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\DigitaL OutleT\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\akbor hossain\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
@@ -91,8 +99,8 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "G:\\clean-d--coders\\backend\\Modules\\Goals\\MentorConnect.Goals.Domain\\MentorConnect.Goals.Domain.csproj": {
-                "projectPath": "G:\\clean-d--coders\\backend\\Modules\\Goals\\MentorConnect.Goals.Domain\\MentorConnect.Goals.Domain.csproj"
+              "D:\\projects\\clean-d--coders\\backend\\Modules\\Goals\\MentorConnect.Goals.Domain\\MentorConnect.Goals.Domain.csproj": {
+                "projectPath": "D:\\projects\\clean-d--coders\\backend\\Modules\\Goals\\MentorConnect.Goals.Domain\\MentorConnect.Goals.Domain.csproj"
               }
             }
           }
@@ -107,7 +115,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.200"
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net9.0": {
@@ -142,21 +150,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "G:\\clean-d--coders\\backend\\Modules\\Goals\\MentorConnect.Goals.Domain\\MentorConnect.Goals.Domain.csproj": {
+    "D:\\projects\\clean-d--coders\\backend\\Modules\\Goals\\MentorConnect.Goals.Domain\\MentorConnect.Goals.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\clean-d--coders\\backend\\Modules\\Goals\\MentorConnect.Goals.Domain\\MentorConnect.Goals.Domain.csproj",
+        "projectUniqueName": "D:\\projects\\clean-d--coders\\backend\\Modules\\Goals\\MentorConnect.Goals.Domain\\MentorConnect.Goals.Domain.csproj",
         "projectName": "MentorConnect.Goals.Domain",
-        "projectPath": "G:\\clean-d--coders\\backend\\Modules\\Goals\\MentorConnect.Goals.Domain\\MentorConnect.Goals.Domain.csproj",
-        "packagesPath": "C:\\Users\\DigitaL OutleT\\.nuget\\packages\\",
-        "outputPath": "G:\\clean-d--coders\\backend\\Modules\\Goals\\MentorConnect.Goals.Domain\\obj\\",
+        "projectPath": "D:\\projects\\clean-d--coders\\backend\\Modules\\Goals\\MentorConnect.Goals.Domain\\MentorConnect.Goals.Domain.csproj",
+        "packagesPath": "C:\\Users\\akbor hossain\\.nuget\\packages\\",
+        "outputPath": "D:\\projects\\clean-d--coders\\backend\\Modules\\Goals\\MentorConnect.Goals.Domain\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\DigitaL OutleT\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\akbor hossain\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
@@ -168,8 +180,8 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "G:\\clean-d--coders\\backend\\BuildingBlocks\\MentorConnect.BuildingBlocks.SharedKernel\\MentorConnect.BuildingBlocks.SharedKernel.csproj": {
-                "projectPath": "G:\\clean-d--coders\\backend\\BuildingBlocks\\MentorConnect.BuildingBlocks.SharedKernel\\MentorConnect.BuildingBlocks.SharedKernel.csproj"
+              "D:\\projects\\clean-d--coders\\backend\\BuildingBlocks\\MentorConnect.BuildingBlocks.SharedKernel\\MentorConnect.BuildingBlocks.SharedKernel.csproj": {
+                "projectPath": "D:\\projects\\clean-d--coders\\backend\\BuildingBlocks\\MentorConnect.BuildingBlocks.SharedKernel\\MentorConnect.BuildingBlocks.SharedKernel.csproj"
               }
             }
           }
@@ -184,7 +196,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.200"
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net9.0": {
@@ -205,7 +217,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

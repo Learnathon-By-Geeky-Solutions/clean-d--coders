@@ -7,7 +7,6 @@ import { isValidRole, pathProfile } from "@/utils";
 
 const AuthorizedCheck = memo(({ children, role }) => {
   const { user, isLoading } = useUserStore();
-
   if (isLoading) return <FullScreenLoading fullScreen />;
   else if (!user?.role) return <Navigate to="/sign-in" />;
   else if (isValidRole(user.role, role)) return children;
