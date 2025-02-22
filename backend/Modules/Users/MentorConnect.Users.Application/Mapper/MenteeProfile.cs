@@ -12,6 +12,6 @@ public class MenteeProfile : Profile
         CreateMap<Mentee, GetMenteeDto>()
             .ForMember(dest => dest.User, opt => opt.MapFrom(src => src.User));
         CreateMap<Mentee, MenteeDto>();
-        CreateMap<CreateMenteeDto, Mentee>();
+        CreateMap<CreateUpdateMenteeDto, Mentee>();
     }
 }

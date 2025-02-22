@@ -77,7 +77,7 @@ public class UserServices(IUserRepository userRepository, IMapper mapper) : IUse
         }
         return result;
     }
-    public async Task<GetAdminDto> AddAdmin(CreateAdminDto adminInfo)
+    public async Task<GetAdminDto> AddAdmin(CreateUpdateAdminDto adminInfo)
     {
         var admin = _mapper.Map<Admin>(adminInfo);
         admin.CreateTime();
@@ -85,7 +85,7 @@ public class UserServices(IUserRepository userRepository, IMapper mapper) : IUse
         var result = _mapper.Map<GetAdminDto>(admin);
         return result;
     }
-    public async Task<GetMentorDto> AddMentor(CreateMentorDto mentorInfo)
+    public async Task<GetMentorDto> AddMentor(CreateUpdateMentorDto mentorInfo)
     {
         var mentor = _mapper.Map<Admin>(mentorInfo);
         mentor.CreateTime();
@@ -93,7 +93,7 @@ public class UserServices(IUserRepository userRepository, IMapper mapper) : IUse
         var result = _mapper.Map<GetMentorDto>(mentor);
         return result;
     }
-    public async Task<GetMenteeDto> AddMentee(CreateMenteeDto menteeInfo)
+    public async Task<GetMenteeDto> AddMentee(CreateUpdateMenteeDto menteeInfo)
     {
         var mentee = _mapper.Map<Admin>(menteeInfo);
         mentee.CreateTime();
@@ -113,4 +113,33 @@ public class UserServices(IUserRepository userRepository, IMapper mapper) : IUse
         await _userRepository.DeleteAsync(id);
     }
 
+    public Task UpdateAdmin(CreateUpdateAdminDto adminInfo)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task DeleteAdmin(Guid id)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task UpdateMentor(CreateUpdateMentorDto mentorInfo)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task DeleteMentor(Guid id)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task UpdateMentee(CreateUpdateMenteeDto menteeInfo)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task DeleteMentee(Guid id)
+    {
+        throw new NotImplementedException();
+    }
 }
