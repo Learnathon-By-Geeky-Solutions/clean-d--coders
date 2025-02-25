@@ -1,4 +1,4 @@
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import {
   Sidebar,
   SidebarContent,
@@ -40,8 +40,17 @@ import {
 import { useUserStore } from "@/store";
 import { useSidebar } from "@/hooks";
 const DashboardSidebar = () => {
-  const { user } = useUserStore();
+  const { user, signOut } = useUserStore();
   const { isMobile } = useSidebar();
+  const navigate = useNavigate();
+  const handleSignOut = async () => {
+    try {
+      await signOut();
+      navigate(pathSignIn);
+    } catch (error) {
+      console.error("Sign out failed:", error.message);
+    }
+  };
   // Menu items.
   const menteeItems = [
     {
@@ -88,7 +97,7 @@ const DashboardSidebar = () => {
           <SidebarContent>
             <SidebarGroup>
               {/* Common User routes */}
-              {isValidRole(user.role, ["user", "mentor", "mentee"]) && (
+              {isValidRole(user?.role, ["user", "mentor", "mentee"]) && (
                 <SidebarGroupContent>
                   <SidebarMenu>
                     <SidebarMenuItem>
@@ -104,7 +113,7 @@ const DashboardSidebar = () => {
               )}
 
               {/* Admin routes */}
-              {isValidRole(user.role, ["admin"]) && (
+              {isValidRole(user?.role, ["admin"]) && (
                 <>
                   <SidebarGroupLabel>Admin</SidebarGroupLabel>
                   <SidebarGroupContent>
@@ -124,7 +133,7 @@ const DashboardSidebar = () => {
                 </>
               )}
               {/* Mentee routes */}
-              {isValidRole(user.role, ["mentee"]) && (
+              {isValidRole(user?.role, ["mentee"]) && (
                 <>
                   <SidebarGroupLabel>Mentee</SidebarGroupLabel>
                   <SidebarGroupContent>
@@ -145,7 +154,7 @@ const DashboardSidebar = () => {
               )}
 
               {/* Mentor routes */}
-              {isValidRole(user.role, ["mentor"]) ? (
+              {isValidRole(user?.role, ["mentor"]) ? (
                 <>
                   <SidebarGroupLabel>Mentor</SidebarGroupLabel>
                   <SidebarGroupContent>
@@ -164,7 +173,7 @@ const DashboardSidebar = () => {
                   </SidebarGroupContent>
                 </>
               ) : (
-                !user.role.includes("admin") && (
+                !user?.role.includes("admin") && (
                   <SidebarGroupContent>
                     <SidebarMenu>
                       <SidebarMenuItem>
@@ -195,14 +204,13 @@ const DashboardSidebar = () => {
               <UserRound />
             </Link>
           </Button>
-          <Button variant="destructive">
-            <Link
-              to={pathSignIn}
-              className="w-full flex items-center justify-between"
-            >
-              <span>Logout</span>
-              <LogOut />
-            </Link>
+          <Button
+            onClick={handleSignOut}
+            variant="destructive"
+            className="w-full flex items-center justify-between"
+          >
+            <span>Logout</span>
+            <LogOut />
           </Button>
         </SidebarFooter>
       </div>
