@@ -16,6 +16,7 @@ const useSessionStore = create((set, get) => ({
                 name: "Become a Cloud Computing Expert",
                 milestones: [
                   {
+                    id: 10,
                     name: "Milestone 1: Get AWS Certified",
                     tasks: [
                       { name: "Complete AWS fundamentals course", completed: true },
@@ -24,6 +25,7 @@ const useSessionStore = create((set, get) => ({
                     ]
                   },
                   {
+                    id: 11,
                     name: "Milestone 2: Deploy scalable applications",
                     tasks: [
                       { name: "Set up a cloud-based web app", completed: true },
@@ -45,6 +47,7 @@ const useSessionStore = create((set, get) => ({
                 name: "Master UI/UX Design",
                 milestones: [
                   {
+                    id: 12,
                     name: "Milestone 1: Learn UI/UX principles",
                     tasks: [
                       { name: "Study design thinking concepts", completed: true },
@@ -53,6 +56,7 @@ const useSessionStore = create((set, get) => ({
                     ]
                   },
                   {
+                    id: 13,
                     name: "Milestone 2: Build a portfolio",
                     tasks: [
                       { name: "Design three portfolio projects", completed: true },
@@ -128,9 +132,7 @@ const useSessionStore = create((set, get) => ({
           }
 
         ]
-      }
-      
-      ,
+      },
       isLoading: false,
     });
   },

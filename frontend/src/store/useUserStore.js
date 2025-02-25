@@ -36,11 +36,12 @@ const useUserStore = create((set) => ({
       if (error) throw error;
       set({ 
         user: {
-          role: ["user", "mentee", "mentor"],
+          role: ["mentee"],
           data: data.user
         }, 
         isLoading: false 
       });
+      //console.log('Signed in user: ', useUserStore.getState.user)
       return data;
     } catch (error) {
       set({ isLoading: false });
@@ -55,7 +56,7 @@ const useUserStore = create((set) => ({
       set({ user: null, isLoading: false });
     } catch (error) {
       set({ isLoading: false });
-      console.error('Sign out failed:', error.message);
+      //console.error('Sign out failed:', error.message)
       throw error;
     }
   },
@@ -63,7 +64,7 @@ const useUserStore = create((set) => ({
     try {
       set({ isLoading: true });
       const { data: { session }, error } = await supabase.auth.getSession();
-      console.log("Initial session:", session); // Log the session data
+      //console.log("Initial session:", session) 
 
       if (error) throw error;
 
@@ -72,35 +73,33 @@ const useUserStore = create((set) => ({
           data: session.user,
           role: ["mentee"],
         };
-        console.log("User initialized:", userData); // Log the user data
+       // console.log("User initialized:", userData)  Log the user data
         set({ user: userData, isLoading: false });
       } else {
-        console.log("No user session found");
+       // console.log("No user session found")
         set({ isLoading: false });
       }
 
       // Set up auth state change listener
       supabase.auth.onAuthStateChange((_event, session) => {
-        console.log("Auth state changed. Event:", _event); // Log auth state changes
+       // console.log("Auth state changed. Event:", _event) Log auth state changes
         if (session?.user) {
           const userData = {
             data: session.user,
             role: [ "mentee"],
           };
-          console.log("User updated:", userData);
+         // console.log("User updated:", userData)
           set({ user: userData, isLoading: false });
         } else {
-          console.log("User cleared");
+         // console.log("User cleared")
           set({ isLoading: false });
         }
       });
     } catch (error) {
-      console.error('Error initializing auth:', error);
+      //console.error('Error initializing auth:', error)
       set({ isLoading: false });
     }
   },
-
-  // Initialize auth state
 }));
 
 export default useUserStore;

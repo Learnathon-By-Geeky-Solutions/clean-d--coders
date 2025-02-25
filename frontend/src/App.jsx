@@ -16,6 +16,7 @@ const App = () => {
     };
   
     setup();
+    console.log(useUserStore.getState().user)
   }, [setUser, initializeAuth]);
 
 

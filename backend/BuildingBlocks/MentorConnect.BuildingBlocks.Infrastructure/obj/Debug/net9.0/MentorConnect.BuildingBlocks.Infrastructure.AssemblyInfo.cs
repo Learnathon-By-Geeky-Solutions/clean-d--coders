@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MentorConnect.BuildingBlocks.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+166e721a1a32cd11d1b5fc057001ea9875659272")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d29ff928978f3356b15ba5a03b3e67e0a5d4b077")]
 [assembly: System.Reflection.AssemblyProductAttribute("MentorConnect.BuildingBlocks.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MentorConnect.BuildingBlocks.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
