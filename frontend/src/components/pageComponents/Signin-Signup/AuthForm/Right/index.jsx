@@ -4,7 +4,8 @@ import PropTypes from 'prop-types';
 
 const RightAuthForm = ({title, buttonName, routeName, handleSubmit, routePath}) => {
   const onSubmit = (e) => {
-    handleSubmit(e);
+    e.preventDefault();
+    handleSubmit(e.target);
   };
 
   return (

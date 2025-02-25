@@ -5,10 +5,19 @@ import { Outlet, useLocation } from "react-router";
 
 const App = () => {
   const {pathname} = useLocation()
-  const {setUser} = useUserStore()
+  const initializeAuth = useUserStore((state) => state.initializeAuth);
+  const setUser = useUserStore((state) => state.setUser);
+  
   useEffect(() => {
-    setUser()
-  }, [setUser])
+    const setup = async () => {
+      await setUser();
+      await initializeAuth();
+      console.log("Updated user data: ", useUserStore.getState().user);
+    };
+  
+    setup();
+    console.log(useUserStore.getState().user)
+  }, [setUser, initializeAuth]);
 
 
   if(pathname.startsWith('/dashboard'))
