@@ -11,6 +11,13 @@ const RightAuthForm = ({
   routePath,
 }) => {
   const { signInByGoogle } = useUserStore();
+  const handleLoginGoogle = async () => {
+    try {
+      await signInByGoogle();
+    } catch (error) {
+      console.error("Google sign in failed:", error.message);
+    }
+  };
   const onSubmit = (e) => {
     e.preventDefault();
     handleSubmit(e.target);
@@ -104,7 +111,7 @@ const RightAuthForm = ({
           <div className="mt-6 grid grid-cols-3 gap-3">
             <button
               className="w-full inline-flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent transition-colors duration-200"
-              onClick={signInByGoogle}
+              onClick={handleLoginGoogle}
             >
               <FaGoogle className="text-[#DB4437] text-xl" />
             </button>

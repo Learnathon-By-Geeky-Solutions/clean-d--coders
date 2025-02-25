@@ -60,8 +60,12 @@ const useUserStore = create((set) => ({
   signInByGoogle: async () => {
     try {
       set((prev) => ({ ...prev, isLoading: true }));
+
       const { data, error } = await supabase.auth.signInWithOAuth({
         provider: "google",
+        options: {
+          redirectTo: `${import.meta.env.VITE_HOST}/dashboard`,
+        },
       });
       if (error) throw error;
       set((prev) => ({
@@ -72,7 +76,6 @@ const useUserStore = create((set) => ({
         },
         isLoading: false,
       }));
-      //console.log('Signed in user: ', useUserStore.getState.user)
       return data;
     } catch (error) {
       set((prev) => ({ ...prev, isLoading: false }));
