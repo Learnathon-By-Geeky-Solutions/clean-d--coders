@@ -5,9 +5,9 @@ namespace MentorConnect.Users.Domain.Entities;
 
 public class User : GeneralEntity
 {
-    public string Name { get; set; } = default!;
-    public string Email { get; set; } = default!;
-    public DateTime BirthDate { get; set; } = default!;
+    public string? Name { get; set; }
+    public string? Email { get; set; }
+    public DateTime? BirthDate { get; set; }
 
     // one to one relationship 
     public Admin? Admin { get; set; }
