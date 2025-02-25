@@ -12,6 +12,6 @@ public class MentorProfile : Profile
         CreateMap<Mentor, GetMentorDto>()
             .ForMember(dest => dest.User, opt => opt.MapFrom(src => src.User));
         CreateMap<Mentor, MentorDto>();
-        CreateMap<CreateMentorDto, Mentor>();
+        CreateMap<CreateUpdateMentorDto, Mentor>();
     }
 }
