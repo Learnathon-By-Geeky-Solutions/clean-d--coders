@@ -7,7 +7,9 @@ public class User : GeneralEntity
 {
     public string? Name { get; set; }
     public string? Email { get; set; }
-    public DateTime? BirthDate { get; set; }
+    public string? Password { get; set; }
+    public string? ImageUrl { get; set; }
+    public bool Banned { get; set; } = false!;
 
     // one to one relationship 
     public Admin? Admin { get; set; }

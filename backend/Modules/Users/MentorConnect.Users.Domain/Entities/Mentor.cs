@@ -7,7 +7,9 @@ namespace MentorConnect.Users.Domain.Entities;
 
 public class Mentor : GeneralEntity
 {
-    public string? Extra { get; set; }
+    public bool Available { get; set; } = true!;
+    public bool Approved { get; set; } = false!;
+    public string DocumentUrl { get; set; } = string.Empty!;
 
 
     public User? User { get; set; }

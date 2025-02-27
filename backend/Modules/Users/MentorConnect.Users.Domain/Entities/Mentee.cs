@@ -7,7 +7,6 @@ namespace MentorConnect.Users.Domain.Entities;
 
 public class Mentee : GeneralEntity
 {
-    public string? Extra { get; set; }
 
     public User? User { get; set; }
 }
