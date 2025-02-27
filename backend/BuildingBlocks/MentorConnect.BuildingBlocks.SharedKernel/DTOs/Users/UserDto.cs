@@ -5,14 +5,16 @@ public class CreateUserDto // for creation
     public string? Name { get; set; }
     public string? Email { get; set; }
 
-    public DateTime? BirthDate { get; set; }
+    public string? Password { get; set; }
+    public string? ImageUrl { get; set; }
 }
 public class UpdateUserDto // for updation
 {
     public Guid Id { get; set; }
     public string? Name { get; set; }
     public string? Email { get; set; }
-    public DateTime? BirthDate { get; set; }
+    public string? Password { get; set; }
+    public string? ImageUrl { get; set; }
 }
 
 public class UserDto : GeneralEntity // for general user data which includes Id and Time
@@ -20,6 +22,8 @@ public class UserDto : GeneralEntity // for general user data which includes Id 
     public string? Name { get; set; }
     public string? Email { get; set; }
     public List<string> Roles { get; set; } = []!;
+
+    public string? ImageUrl { get; set; }
 }
 public class GetUserDto : UserDto // for getting user data which includes navigation properties
 

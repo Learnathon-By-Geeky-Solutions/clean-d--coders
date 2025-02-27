@@ -5,18 +5,18 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace MentorConnect.Users.API.Controllers;
 
-[Route("api/users")]
+[Route("api/u")]
 [ApiController]
-public class UserController(IUserServices userServices) : ControllerBase
+public partial class Users(IUserServices userServices) : ControllerBase
 {
     private readonly IUserServices _userServices = userServices;
-    [HttpGet]
+    [HttpGet("users")]
     public async Task<ActionResult<List<GetUserDto>>> GetUsers()
     {
         return await _userServices.GetAllUsers();
     }
 
-    [HttpGet("{id:guid}")]
+    [HttpGet("users/{id:guid}")]
     public async Task<ActionResult<GetUserDto>> GetUserById([FromRoute] Guid id)
     {
         GetUserDto? user = await _userServices.GetUserById(id);
@@ -26,13 +26,13 @@ public class UserController(IUserServices userServices) : ControllerBase
         }
         return user;
     }
-    [HttpPost]
+    [HttpPost("users")]
     public async Task<ActionResult<GetUserDto>> AddUser([FromBody] CreateUserDto user)
     {
         var result = await _userServices.AddUser(user);
         return result;
     }
-    [HttpPut("{id:guid}")]
+    [HttpPut("users/{id:guid}")]
     public async Task<ActionResult> UpdateUser([FromRoute] Guid id, [FromBody] UpdateUserDto user)
     {
         if (id != user.Id)
@@ -42,7 +42,7 @@ public class UserController(IUserServices userServices) : ControllerBase
         await _userServices.UpdateUser(user);
         return NoContent();
     }
-    [HttpDelete("{id:guid}")]
+    [HttpDelete("users/{id:guid}")]
     public async Task<ActionResult> DeleteUser([FromRoute] Guid id)
     {
         await _userServices.DeleteUser(id);

@@ -53,14 +53,21 @@ public class UserServices(IUserRepository userRepository, IMapper mapper) : IUse
 
     public async Task<GetUserDto?> GetUserById(Guid id)
     {
-        var result = _mapper.Map<GetUserDto?>(await _userRepository.GetByIdAsync(id));
+        var result = _mapper.Map<GetUserDto?>(await _userRepository.GetUserByIdAsync(id));
         return result;
     }
 
     public async Task<GetUserDto> AddUser(CreateUserDto userInfo)
     {
         var user = _mapper.Map<User>(userInfo);
+        var allUsers = await _userRepository.GetAllUsersAsync();
+        var exist = allUsers.Any(u => u.Email == user.Email);
+        if (exist)
+        {
+            throw new InvalidOperationException("User already exists");
+        }
         user.CreateTime();
+        user.Banned = false;
         await _userRepository.AddUserAsync(user);
         var result = _mapper.Map<GetUserDto>(user);
         if (result.Admin != null)
@@ -77,27 +84,19 @@ public class UserServices(IUserRepository userRepository, IMapper mapper) : IUse
         }
         return result;
     }
-    public async Task<GetAdminDto> AddAdmin(CreateUpdateAdminDto adminInfo)
-    {
-        var admin = _mapper.Map<Admin>(adminInfo);
-        admin.CreateTime();
-        await _userRepository.AddAdminAsync(admin);
-        var result = _mapper.Map<GetAdminDto>(admin);
-        return result;
-    }
     public async Task<GetMentorDto> AddMentor(CreateUpdateMentorDto mentorInfo)
     {
-        var mentor = _mapper.Map<Admin>(mentorInfo);
+        var mentor = _mapper.Map<Mentor>(mentorInfo);
         mentor.CreateTime();
-        await _userRepository.AddAdminAsync(mentor);
+        await _userRepository.AddMentorAsync(mentor);
         var result = _mapper.Map<GetMentorDto>(mentor);
         return result;
     }
     public async Task<GetMenteeDto> AddMentee(CreateUpdateMenteeDto menteeInfo)
     {
-        var mentee = _mapper.Map<Admin>(menteeInfo);
+        var mentee = _mapper.Map<Mentee>(menteeInfo);
         mentee.CreateTime();
-        await _userRepository.AddAdminAsync(mentee);
+        await _userRepository.AddMenteeAsync(mentee);
         var result = _mapper.Map<GetMenteeDto>(mentee);
         return result;
     }
@@ -105,41 +104,38 @@ public class UserServices(IUserRepository userRepository, IMapper mapper) : IUse
     {
         var user = _mapper.Map<User>(userInfo);
         user.UpdateTime();
-        await _userRepository.UpdateAsync(user);
+        await _userRepository.UpdateUserAsync(user);
     }
 
     public async Task DeleteUser(Guid id)
     {
-        await _userRepository.DeleteAsync(id);
+        await _userRepository.DeleteUserAsync(id);
     }
 
-    public Task UpdateAdmin(CreateUpdateAdminDto adminInfo)
+
+
+    public async Task UpdateMentor(CreateUpdateMentorDto mentorInfo)
     {
-        throw new NotImplementedException();
+        var mentor = _mapper.Map<Mentor>(mentorInfo);
+        mentor.UpdateTime();
+        mentor.Approved = false;
+        await _userRepository.UpdateMentorAsync(mentor);
     }
 
-    public Task DeleteAdmin(Guid id)
+    public async Task DeleteMentor(Guid id)
     {
-        throw new NotImplementedException();
+        await _userRepository.DeleteMentorAsync(id);
     }
 
-    public Task UpdateMentor(CreateUpdateMentorDto mentorInfo)
+    public async Task UpdateMentee(CreateUpdateMenteeDto menteeInfo)
     {
-        throw new NotImplementedException();
+        var mentee = _mapper.Map<Mentee>(menteeInfo);
+        mentee.UpdateTime();
+        await _userRepository.UpdateMenteeAsync(mentee);
     }
 
-    public Task DeleteMentor(Guid id)
+    public async Task DeleteMentee(Guid id)
     {
-        throw new NotImplementedException();
-    }
-
-    public Task UpdateMentee(CreateUpdateMenteeDto menteeInfo)
-    {
-        throw new NotImplementedException();
-    }
-
-    public Task DeleteMentee(Guid id)
-    {
-        throw new NotImplementedException();
+        await _userRepository.DeleteMenteeAsync(id);
     }
 }
