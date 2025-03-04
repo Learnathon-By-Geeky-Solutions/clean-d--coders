@@ -1,6 +1,6 @@
 using System;
 using AutoMapper;
-using MentorConnect.BuildingBlocks.SharedKernel.DTOs.Users;
+using MentorConnect.Users.Application.DTOs;
 using MentorConnect.BuildingBlocks.SharedKernel.Extensions;
 using MentorConnect.Users.Application.Contracts;
 using MentorConnect.Users.Domain.Entities;

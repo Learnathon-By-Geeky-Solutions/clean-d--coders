@@ -1,21 +1,18 @@
 using System;
+using System.Dynamic;
 using MediatR;
-using MentorConnect.BuildingBlocks.SharedKernel.DTOs.Users;
+using MentorConnect.BuildingBlocks.SharedKernel.Extensions;
 using MentorConnect.BuildingBlocks.SharedKernel.Requests;
 using MentorConnect.Users.Application.Contracts;
 namespace MentorConnect.Users.Application.Handlers;
 
-public class GetAllUsersHandler(IUserRepository userRepository) : IRequestHandler<GetAllUsersQuery, List<GetUserDto>>
+public class GetAllUsersHandler(IUserServices userServices) : IRequestHandler<GetAllUsersQuery, List<ExpandoObject>>
 {
-    private readonly IUserRepository _userRepository = userRepository;
+    private readonly IUserServices _userServices = userServices;
 
-    public async Task<List<GetUserDto>> Handle(GetAllUsersQuery request, CancellationToken cancellationToken)
+    public async Task<List<ExpandoObject>> Handle(GetAllUsersQuery request, CancellationToken cancellationToken)
     {
-        var users = await _userRepository.GetAllUsersAsync();
-        return [.. users.Select(u => new GetUserDto{
-            Id = u.Id,
-            Email = u.Email,
-            Name = u.Name
-        })];
+        var users = await _userServices.GetAllUsers();
+        return [.. users.Select(u => CoreExtensions.ConvertToExpando(u))];
     }
 }
