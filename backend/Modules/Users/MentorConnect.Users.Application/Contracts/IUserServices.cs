@@ -1,5 +1,5 @@
 using System;
-using MentorConnect.BuildingBlocks.SharedKernel.DTOs.Users;
+using MentorConnect.Users.Application.DTOs;
 using MentorConnect.Users.Domain.Entities;
 
 namespace MentorConnect.Users.Application.Contracts;

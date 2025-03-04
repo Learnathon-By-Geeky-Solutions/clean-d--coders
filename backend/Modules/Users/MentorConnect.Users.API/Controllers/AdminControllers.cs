@@ -1,5 +1,5 @@
 
-using MentorConnect.BuildingBlocks.SharedKernel.DTOs.Users;
+using MentorConnect.Users.Application.DTOs;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MentorConnect.Users.API.Controllers;

@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Dynamic;
 using MentorConnect.BuildingBlocks.SharedKernel.DTOs;
 using Microsoft.EntityFrameworkCore;
 
@@ -34,5 +36,17 @@ public static class CoreExtensions
                 }
             }
         }
+    }
+    public static ExpandoObject ConvertToExpando(object obj)
+    {
+        var expando = new ExpandoObject();
+        var dictionary = (IDictionary<string, object?>)expando;
+
+        foreach (var property in obj.GetType().GetProperties())
+        {
+            dictionary[property.Name] = property.GetValue(obj);
+        }
+
+        return expando;
     }
 }

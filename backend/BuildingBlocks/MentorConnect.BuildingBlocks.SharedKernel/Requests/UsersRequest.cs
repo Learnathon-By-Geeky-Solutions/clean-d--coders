@@ -1,7 +1,7 @@
 using System;
+using System.Dynamic;
 using MediatR;
-using MentorConnect.BuildingBlocks.SharedKernel.DTOs.Users;
 
 namespace MentorConnect.BuildingBlocks.SharedKernel.Requests;
-public record GetAllUsersQuery() : IRequest<List<GetUserDto>>;
+public record GetAllUsersQuery() : IRequest<List<ExpandoObject>>;
 

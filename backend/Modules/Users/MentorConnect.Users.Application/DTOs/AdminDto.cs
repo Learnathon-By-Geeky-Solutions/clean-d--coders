@@ -1,6 +1,7 @@
 using System;
+using MentorConnect.BuildingBlocks.SharedKernel.DTOs;
 
-namespace MentorConnect.BuildingBlocks.SharedKernel.DTOs.Users;
+namespace MentorConnect.Users.Application.DTOs;
 
 public class CreateUpdateAdminDto
 {
