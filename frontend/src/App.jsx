@@ -10,9 +10,8 @@ const App = () => {
   useEffect(() => {
     (async () => {
       await initializeAuth();
-      console.log("Updated user data: ", useUserStore.getState().user);
+    
     })();
-    console.log(useUserStore.getState().user);
   }, [setUser, initializeAuth]);
 
   if (pathname.startsWith("/dashboard")) return <Outlet />;

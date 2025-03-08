@@ -89,7 +89,6 @@ const useUserStore = create((set) => ({
       set((prev) => ({ ...prev, user: null, isLoading: false }));
     } catch (error) {
       set((prev) => ({ ...prev, user: null, isLoading: false }));
-      //console.error('Sign out failed:', error.message)
       throw error;
     }
   },
@@ -100,8 +99,7 @@ const useUserStore = create((set) => ({
         data: { session },
         error,
       } = await supabase.auth.getSession();
-      //console.log("Initial session:", session)
-
+    
       if (error) throw error;
 
       if (session?.user) {
@@ -109,25 +107,21 @@ const useUserStore = create((set) => ({
           ...session.user,
           role: ["mentee"],
         };
-        // console.log("User initialized:", userData)  Log the user data
+
         set((prev) => ({ ...prev, user: userData, isLoading: false }));
       } else {
-        // console.log("No user session found")
         set((prev) => ({ ...prev, isLoading: false }));
       }
 
-      // Set up auth state change listener
+     
       supabase.auth.onAuthStateChange((_event, session) => {
-        // console.log("Auth state changed. Event:", _event) Log auth state changes
         if (session?.user) {
           const userData = {
             ...session.user,
             role: ["mentee"],
           };
-          // console.log("User updated:", userData)
           set((prev) => ({ ...prev, user: userData, isLoading: false }));
         } else {
-          // console.log("User cleared")
           set((prev) => ({ ...prev, isLoading: false }));
         }
       });
